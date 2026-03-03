@@ -1,6 +1,9 @@
-from sprite_object import *
-from npc import *
+import pygame as pg
+
 from random import choices, randrange
+
+from sprite_object import AnimatedSprite
+from npc import SoldierNPC, CacoDemonNPC, CyberDemonNPC
 
 
 class ObjectHandler:

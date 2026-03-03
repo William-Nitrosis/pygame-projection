@@ -1,15 +1,16 @@
 import pygame as pg
+
 import sys
-from settings import *
-from map import *
-from player import *
-from raycasting import *
-from object_renderer import *
-from sprite_object import *
-from object_handler import *
-from weapon import *
-from sound import *
-from pathfinding import *
+
+from settings import RES, FPS
+from map import Map
+from player import Player
+from raycasting import RayCasting
+from object_renderer import ObjectRenderer
+from object_handler import ObjectHandler
+from weapon import Weapon
+from sound import Sound
+from pathfinding import PathFinding
 
 
 class Game:
@@ -43,7 +44,7 @@ class Game:
         self.weapon.update()
         pg.display.flip()
         self.delta_time = self.clock.tick(FPS)
-        pg.display.set_caption(f'{self.clock.get_fps() :.1f}')
+        pg.display.set_caption(f"{self.clock.get_fps():.1f}")
 
     def draw(self):
         # self.screen.fill('black')
@@ -55,7 +56,9 @@ class Game:
     def check_events(self):
         self.global_trigger = False
         for event in pg.event.get():
-            if event.type == pg.QUIT or (event.type == pg.KEYDOWN and event.key == pg.K_ESCAPE):
+            if event.type == pg.QUIT or (
+                event.type == pg.KEYDOWN and event.key == pg.K_ESCAPE
+            ):
                 pg.quit()
                 sys.exit()
             elif event.type == self.global_event:
@@ -69,6 +72,6 @@ class Game:
             self.draw()
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     game = Game()
     game.run()
