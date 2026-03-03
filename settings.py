@@ -18,7 +18,9 @@ from typing import Tuple
 # Window / timing
 # ---------------------------------------------------------------------------
 
-RES = WIDTH, HEIGHT = 1600, 900
+WIDTH: int = 1600
+HEIGHT: int = 900
+RES = (WIDTH, HEIGHT)
 HALF_WIDTH = WIDTH // 2
 HALF_HEIGHT = HEIGHT // 2
 
@@ -53,7 +55,7 @@ MOUSE_BORDER_RIGHT: int = WIDTH - MOUSE_BORDER_LEFT
 # Colors
 # ---------------------------------------------------------------------------
 
-FLOOR_COLOR: Tuple[int, int, int] = (30, 30, 30)
+FLOOR_COLOR: str = "#292929"
 
 # ---------------------------------------------------------------------------
 # Raycasting
