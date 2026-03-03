@@ -1,10 +1,16 @@
+from __future__ import annotations
+from typing import TYPE_CHECKING
+
+if TYPE_CHECKING:
+    from main import Game
+
 import pygame as pg
 
 from settings import WIDTH, HALF_HEIGHT, RES, FLOOR_COLOR, HEIGHT, TEXTURE_SIZE
 
 
 class ObjectRenderer:
-    def __init__(self, game):
+    def __init__(self, game: Game):
         self.game = game
         self.screen = game.screen
         self.wall_textures = self.load_wall_textures()

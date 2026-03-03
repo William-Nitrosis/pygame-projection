@@ -1,3 +1,9 @@
+from __future__ import annotations
+from typing import TYPE_CHECKING
+
+if TYPE_CHECKING:
+    from main import Game
+
 import pygame as pg
 
 from random import randint, random
@@ -10,7 +16,7 @@ from settings import HALF_WIDTH, MAX_DEPTH
 class NPC(AnimatedSprite):
     def __init__(
         self,
-        game,
+        game: Game,
         path="resources/sprites/npc/soldier/0.png",
         pos=(10.5, 5.5),
         scale=0.6,

@@ -1,3 +1,9 @@
+from __future__ import annotations
+from typing import TYPE_CHECKING
+
+if TYPE_CHECKING:
+    from main import Game
+
 import pygame as pg
 
 from random import choices, randrange
@@ -7,7 +13,7 @@ from npc import SoldierNPC, CacoDemonNPC, CyberDemonNPC
 
 
 class ObjectHandler:
-    def __init__(self, game):
+    def __init__(self, game: Game):
         self.game = game
         self.sprite_list = []
         self.npc_list = []

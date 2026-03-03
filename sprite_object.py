@@ -1,3 +1,9 @@
+from __future__ import annotations
+from typing import TYPE_CHECKING
+
+if TYPE_CHECKING:
+    from main import Game
+
 import pygame as pg
 
 import os
@@ -10,7 +16,7 @@ from settings import SCREEN_DIST, HALF_HEIGHT, DELTA_ANGLE, HALF_NUM_RAYS, SCALE
 class SpriteObject:
     def __init__(
         self,
-        game,
+        game: Game,
         path="resources/sprites/static_sprites/candlebra.png",
         pos=(10.5, 3.5),
         scale=0.7,
@@ -97,7 +103,7 @@ class AnimatedSprite(SpriteObject):
         self.check_animation_time()
         self.animate(self.images)
 
-    def animate(self, images):
+    def animate(self, images: deque[pg.Surface]):
         if self.animation_trigger:
             images.rotate(-1)
             self.image = images[0]
@@ -109,7 +115,7 @@ class AnimatedSprite(SpriteObject):
             self.animation_time_prev = time_now
             self.animation_trigger = True
 
-    def get_images(self, path):
+    def get_images(self, path) -> deque[pg.Surface]:
         images = deque()
         for file_name in os.listdir(path):
             if os.path.isfile(os.path.join(path, file_name)):

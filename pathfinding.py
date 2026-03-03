@@ -1,9 +1,15 @@
+from __future__ import annotations
+from typing import TYPE_CHECKING
+
+if TYPE_CHECKING:
+    from main import Game
+
 from collections import deque
 from functools import lru_cache
 
 
 class PathFinding:
-    def __init__(self, game):
+    def __init__(self, game: Game):
         self.game = game
         self.map = game.map.mini_map
         self.ways = [-1, 0], [0, -1], [1, 0], [0, 1], [-1, -1], [1, -1], [1, 1], [-1, 1]

@@ -1,3 +1,9 @@
+from __future__ import annotations
+from typing import TYPE_CHECKING
+
+if TYPE_CHECKING:
+    from main import Game
+
 import pygame as pg
 
 from collections import deque
@@ -9,7 +15,7 @@ from sprite_object import AnimatedSprite
 class Weapon(AnimatedSprite):
     def __init__(
         self,
-        game,
+        game: Game,
         path="resources/sprites/weapon/shotgun/0.png",
         scale=0.4,
         animation_time=90,

@@ -1,3 +1,9 @@
+from __future__ import annotations
+from typing import TYPE_CHECKING
+
+if TYPE_CHECKING:
+    from main import Game
+
 import pygame as pg
 
 import math
@@ -19,7 +25,7 @@ from settings import (
 
 
 class Player:
-    def __init__(self, game):
+    def __init__(self, game: Game):
         self.game = game
         self.x, self.y = PLAYER_POS
         self.angle = PLAYER_ANGLE
@@ -54,7 +60,7 @@ class Player:
         self.game.sound.player_pain.play()
         self.check_game_over()
 
-    def single_fire_event(self, event):
+    def single_fire_event(self, event: pg.event.Event):
         if event.type == pg.MOUSEBUTTONDOWN:
             if event.button == 1 and not self.shot and not self.game.weapon.reloading:
                 self.game.sound.shotgun.play()

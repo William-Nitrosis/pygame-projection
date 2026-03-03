@@ -1,3 +1,9 @@
+from __future__ import annotations
+from typing import TYPE_CHECKING
+
+if TYPE_CHECKING:
+    from main import Game
+
 import pygame as pg
 
 import math
@@ -17,7 +23,7 @@ from settings import (
 
 
 class RayCasting:
-    def __init__(self, game):
+    def __init__(self, game: Game):
         self.game = game
         self.ray_casting_result = []
         self.objects_to_render = []

@@ -1,9 +1,14 @@
+from __future__ import annotations
+from typing import TYPE_CHECKING
+
+if TYPE_CHECKING:
+    from main import Game
+
 import pygame as pg
 
 
-
 class Sound:
-    def __init__(self, game):
+    def __init__(self, game: Game):
         self.game = game
         pg.mixer.init()
         self.path = "resources/sound/"
