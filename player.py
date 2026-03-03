@@ -76,26 +76,26 @@ class Player:
         speed_cos = speed * cos_a
 
         keys = pg.key.get_pressed()
-        num_key_pressed = -1
+        keys_down = 0
         if keys[pg.K_w]:
-            num_key_pressed += 1
+            keys_down += 1
             dx += speed_cos
             dy += speed_sin
         if keys[pg.K_s]:
-            num_key_pressed += 1
+            keys_down += 1
             dx += -speed_cos
             dy += -speed_sin
         if keys[pg.K_a]:
-            num_key_pressed += 1
+            keys_down += 1
             dx += speed_sin
             dy += -speed_cos
         if keys[pg.K_d]:
-            num_key_pressed += 1
+            keys_down += 1
             dx += -speed_sin
             dy += speed_cos
 
         # diag move correction
-        if num_key_pressed:
+        if keys_down >= 2:
             dx *= self.diag_move_corr
             dy *= self.diag_move_corr
 
