@@ -1,35 +1,79 @@
-import math
+"""settings.py
 
-# game settings
+Central configuration for the raycasting "DOOM-like" pygame project.
+
+Notes:
+- `delta_time` used throughout the project is `Clock.tick(FPS)` (milliseconds).
+  Movement / animation constants in this repo are tuned for that.
+- Empty tiles in maps should be `0` (falsy). Wall tiles should be 1..N (truthy)
+  where the value selects the wall texture.
+"""
+
+from __future__ import annotations
+
+import math
+from typing import Tuple
+
+# ---------------------------------------------------------------------------
+# Window / timing
+# ---------------------------------------------------------------------------
+
 RES = WIDTH, HEIGHT = 1600, 900
-# RES = WIDTH, HEIGHT = 1920, 1080
 HALF_WIDTH = WIDTH // 2
 HALF_HEIGHT = HEIGHT // 2
-FPS = 0
 
-PLAYER_POS = 1.5, 5  # mini_map
-PLAYER_ANGLE = 0
-PLAYER_SPEED = 0.004
-PLAYER_ROT_SPEED = 0.002
-PLAYER_SIZE_SCALE = 60
-PLAYER_MAX_HEALTH = 100
+# FPS=0 means "uncapped" for pygame's Clock.tick.
+FPS: int = 0
 
-MOUSE_SENSITIVITY = 0.0003
-MOUSE_MAX_REL = 40
-MOUSE_BORDER_LEFT = 100
-MOUSE_BORDER_RIGHT = WIDTH - MOUSE_BORDER_LEFT
+# ---------------------------------------------------------------------------
+# Player
+# ---------------------------------------------------------------------------
 
-FLOOR_COLOR = (30, 30, 30)
+PLAYER_POS: Tuple[float, float] = (1.5, 5.0)  # map-space coordinates
+PLAYER_ANGLE: float = 0.0
 
-FOV = math.pi / 3
-HALF_FOV = FOV / 2
-NUM_RAYS = WIDTH // 2
-HALF_NUM_RAYS = NUM_RAYS // 2
-DELTA_ANGLE = FOV / NUM_RAYS
-MAX_DEPTH = 20
+# IMPORTANT: This project treats delta_time as milliseconds.
+PLAYER_SPEED: float = 0.004
+PLAYER_ROT_SPEED: float = 0.002
 
-SCREEN_DIST = HALF_WIDTH / math.tan(HALF_FOV)
-SCALE = WIDTH // NUM_RAYS
+# Used for collision checks (tuned with ms delta_time).
+PLAYER_SIZE_SCALE: float = 60.0
+PLAYER_MAX_HEALTH: int = 100
 
-TEXTURE_SIZE = 256
-HALF_TEXTURE_SIZE = TEXTURE_SIZE // 2
+# ---------------------------------------------------------------------------
+# Mouse look
+# ---------------------------------------------------------------------------
+
+MOUSE_SENSITIVITY: float = 0.0003
+MOUSE_MAX_REL: int = 40
+MOUSE_BORDER_LEFT: int = 100
+MOUSE_BORDER_RIGHT: int = WIDTH - MOUSE_BORDER_LEFT
+
+# ---------------------------------------------------------------------------
+# Colors
+# ---------------------------------------------------------------------------
+
+FLOOR_COLOR: Tuple[int, int, int] = (30, 30, 30)
+
+# ---------------------------------------------------------------------------
+# Raycasting
+# ---------------------------------------------------------------------------
+
+FOV: float = math.pi / 3
+HALF_FOV: float = FOV / 2
+
+NUM_RAYS: int = WIDTH // 2
+HALF_NUM_RAYS: int = NUM_RAYS // 2
+DELTA_ANGLE: float = FOV / NUM_RAYS
+
+MAX_DEPTH: int = 20
+
+SCREEN_DIST: float = HALF_WIDTH / math.tan(HALF_FOV)
+SCALE: int = WIDTH // NUM_RAYS
+
+# ---------------------------------------------------------------------------
+# Textures
+# ---------------------------------------------------------------------------
+
+TEXTURE_SIZE: int = 256
+HALF_TEXTURE_SIZE: int = TEXTURE_SIZE // 2

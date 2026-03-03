@@ -1,66 +1,99 @@
+"""map.py
+
+Grid map definition and world-map lookup structure.
+
+- `mini_map` is a 2D grid: 0 means empty, 1..N are wall texture ids.
+- `world_map` is a dict keyed by (x, y) tile coordinates for fast lookups.
+"""
+
 from __future__ import annotations
-from typing import TYPE_CHECKING
+
+from typing import TYPE_CHECKING, Dict, Tuple
+
+import pygame as pg
+
+from map_io import load_map_json
 
 if TYPE_CHECKING:
     from main import Game
 
-import pygame as pg
+
+# Optional: if this file exists, it will be used instead of the embedded map.
+# This makes it easy to iterate on levels using map_editor.py.
+DEFAULT_LEVEL_PATH = "resources/maps/level1.json"
 
 
-_ = False
+# 0 = empty
+# 1..5 = wall texture id
 mini_map = [
     [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
-    [1, _, _, _, _, _, _, _, _, _, _, _, _, _, _, 1],
-    [1, _, _, 3, 3, 3, 3, _, _, _, 2, 2, 2, _, _, 1],
-    [1, _, _, _, _, _, 4, _, _, _, _, _, 2, _, _, 1],
-    [1, _, _, _, _, _, 4, _, _, _, _, _, 2, _, _, 1],
-    [1, _, _, 3, 3, 3, 3, _, _, _, _, _, _, _, _, 1],
-    [1, _, _, _, _, _, _, _, _, _, _, _, _, _, _, 1],
-    [1, _, _, _, 4, _, _, _, 4, _, _, _, _, _, _, 1],
-    [1, 1, 1, 3, 1, 3, 1, 1, 1, 3, _, _, 3, 1, 1, 1],
-    [1, 1, 1, 1, 1, 1, 1, 1, 1, 3, _, _, 3, 1, 1, 1],
-    [1, 1, 1, 1, 1, 1, 1, 1, 1, 3, _, _, 3, 1, 1, 1],
-    [1, 1, 3, 1, 1, 1, 1, 1, 1, 3, _, _, 3, 1, 1, 1],
-    [1, 4, _, _, _, _, _, _, _, _, _, _, _, _, _, 1],
-    [3, _, _, _, _, _, _, _, _, _, _, _, _, _, _, 1],
-    [1, _, _, _, _, _, _, _, _, _, _, _, _, _, _, 1],
-    [1, _, _, 2, _, _, _, _, _, 3, 4, _, 4, 3, _, 1],
-    [1, _, _, 5, _, _, _, _, _, _, 3, _, 3, _, _, 1],
-    [1, _, _, 2, _, _, _, _, _, _, _, _, _, _, _, 1],
-    [1, _, _, _, _, _, _, _, _, _, _, _, _, _, _, 1],
-    [3, _, _, _, _, _, _, _, _, _, _, _, _, _, _, 1],
-    [1, 4, _, _, _, _, _, _, 4, _, _, 4, _, _, _, 1],
-    [1, 1, 3, 3, _, _, 3, 3, 1, 3, 3, 1, 3, 1, 1, 1],
-    [1, 1, 1, 3, _, _, 3, 1, 1, 1, 1, 1, 1, 1, 1, 1],
-    [1, 3, 3, 4, _, _, 4, 3, 3, 3, 3, 3, 3, 3, 3, 1],
-    [3, _, _, _, _, _, _, _, _, _, _, _, _, _, _, 3],
-    [3, _, _, _, _, _, _, _, _, _, _, _, _, _, _, 3],
-    [3, _, _, _, _, _, _, _, _, _, _, _, _, _, _, 3],
-    [3, _, _, 5, _, _, _, 5, _, _, _, 5, _, _, _, 3],
-    [3, _, _, _, _, _, _, _, _, _, _, _, _, _, _, 3],
-    [3, _, _, _, _, _, _, _, _, _, _, _, _, _, _, 3],
-    [3, _, _, _, _, _, _, _, _, _, _, _, _, _, _, 3],
+    [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
+    [1, 0, 0, 3, 3, 3, 3, 0, 0, 0, 2, 2, 2, 0, 0, 1],
+    [1, 0, 0, 0, 0, 0, 4, 0, 0, 0, 0, 0, 2, 0, 0, 1],
+    [1, 0, 0, 0, 0, 0, 4, 0, 0, 0, 0, 0, 2, 0, 0, 1],
+    [1, 0, 0, 3, 3, 3, 3, 0, 0, 0, 0, 0, 0, 0, 0, 1],
+    [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
+    [1, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0, 0, 0, 0, 0, 1],
+    [1, 1, 1, 3, 1, 3, 1, 1, 1, 3, 0, 0, 3, 1, 1, 1],
+    [1, 1, 1, 1, 1, 1, 1, 1, 1, 3, 0, 0, 3, 1, 1, 1],
+    [1, 1, 1, 1, 1, 1, 1, 1, 1, 3, 0, 0, 3, 1, 1, 1],
+    [1, 1, 3, 1, 1, 1, 1, 1, 1, 3, 0, 0, 3, 1, 1, 1],
+    [1, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
+    [3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
+    [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
+    [1, 0, 0, 2, 0, 0, 0, 0, 0, 3, 4, 0, 4, 3, 0, 1],
+    [1, 0, 0, 5, 0, 0, 0, 0, 0, 0, 3, 0, 3, 0, 0, 1],
+    [1, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
+    [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
+    [3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
+    [1, 4, 0, 0, 0, 0, 0, 0, 4, 0, 0, 4, 0, 0, 0, 1],
+    [1, 1, 3, 3, 0, 0, 3, 3, 1, 3, 3, 1, 3, 1, 1, 1],
+    [1, 1, 1, 3, 0, 0, 3, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+    [1, 3, 3, 4, 0, 0, 4, 3, 3, 3, 3, 3, 3, 3, 3, 1],
+    [3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3],
+    [3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3],
+    [3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3],
+    [3, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0, 3],
+    [3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3],
+    [3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3],
+    [3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3],
     [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3],
 ]
 
 
 class Map:
-    def __init__(self, game: Game):
-        self.game = game
-        self.mini_map = mini_map
-        self.world_map = {}
-        self.rows = len(self.mini_map)
-        self.cols = len(self.mini_map[0])
-        self.get_map()
+    """Holds the level grid and builds a fast lookup structure for walls."""
 
-    def get_map(self):
+    def __init__(self, game: Game) -> None:
+        self.game = game
+
+        self.mini_map = self._load_or_default()
+        self.world_map: Dict[Tuple[int, int], int] = {}
+
+        self.rows = len(self.mini_map)
+        self.cols = len(self.mini_map[0]) if self.rows else 0
+
+        self._build_world_map()
+
+    def _load_or_default(self):
+        try:
+            from pathlib import Path
+
+            p = Path(DEFAULT_LEVEL_PATH)
+            if p.exists():
+                return load_map_json(p).grid
+        except Exception:
+            # If anything goes wrong, fall back to the embedded map.
+            pass
+        return mini_map
+
+    def _build_world_map(self) -> None:
         for j, row in enumerate(self.mini_map):
             for i, value in enumerate(row):
                 if value:
-                    self.world_map[(i, j)] = value
+                    self.world_map[(i, j)] = int(value)
 
-    def draw(self):
-        for pos in self.world_map:
-            pg.draw.rect(
-                self.game.screen, "darkgray", (pos[0] * 100, pos[1] * 100, 100, 100), 2
-            )
+    def draw(self) -> None:
+        """Debug 2D top-down view of wall tiles."""
+        for x, y in self.world_map:
+            pg.draw.rect(self.game.screen, "darkgray", (x * 100, y * 100, 100, 100), 2)
