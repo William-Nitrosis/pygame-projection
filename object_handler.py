@@ -9,14 +9,14 @@ import pygame as pg
 from random import choices, randrange
 
 from sprite_object import AnimatedSprite
-from npc import SoldierNPC, CacoDemonNPC, CyberDemonNPC
+from npc import NPC, SoldierNPC, CacoDemonNPC, CyberDemonNPC
 
 
 class ObjectHandler:
     def __init__(self, game: Game):
         self.game = game
-        self.sprite_list = []
-        self.npc_list = []
+        self.sprite_list: list[AnimatedSprite] = []
+        self.npc_list: list[NPC] = []
         self.npc_sprite_path = 'resources/sprites/npc/'
         self.static_sprite_path = 'resources/sprites/static_sprites/'
         self.anim_sprite_path = 'resources/sprites/animated_sprites/'
@@ -86,8 +86,8 @@ class ObjectHandler:
         [npc.update() for npc in self.npc_list]
         self.check_win()
 
-    def add_npc(self, npc):
+    def add_npc(self, npc: NPC):
         self.npc_list.append(npc)
 
-    def add_sprite(self, sprite):
+    def add_sprite(self, sprite: AnimatedSprite):
         self.sprite_list.append(sprite)

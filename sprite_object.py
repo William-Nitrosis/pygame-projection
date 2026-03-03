@@ -84,7 +84,7 @@ class SpriteObject:
 class AnimatedSprite(SpriteObject):
     def __init__(
         self,
-        game,
+        game: Game,
         path="resources/sprites/animated_sprites/green_light/0.png",
         pos=(11.5, 3.5),
         scale=0.8,

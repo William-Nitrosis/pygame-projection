@@ -54,7 +54,7 @@ class Player:
             pg.time.delay(1500)
             self.game.new_game()
 
-    def get_damage(self, damage):
+    def get_damage(self, damage: float):
         self.health -= damage
         self.game.object_renderer.player_damage()
         self.game.sound.player_pain.play()
