@@ -21,6 +21,7 @@ from settings import (
     DELTA_ANGLE,
 )
 
+EPS = 1e-6
 
 class RayCasting:
     def __init__(self, game: Game):
@@ -63,6 +64,10 @@ class RayCasting:
         for ray in range(NUM_RAYS):
             sin_a = math.sin(ray_angle)
             cos_a = math.cos(ray_angle)
+            if abs(sin_a) < EPS:
+                sin_a = EPS if sin_a >= 0 else -EPS
+            if abs(cos_a) < EPS:
+                cos_a = EPS if cos_a >= 0 else -EPS
 
             # horizontals
             y_hor, dy = (y_map + 1, 1) if sin_a > 0 else (y_map - 1e-6, -1)
