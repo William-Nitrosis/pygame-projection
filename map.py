@@ -13,6 +13,8 @@ from typing import TYPE_CHECKING, Dict, Tuple
 import pygame as pg
 
 from map_io import load_map_json
+from map_editor import value_to_color, MAX_TILE
+from settings import WIDTH, HEIGHT
 
 if TYPE_CHECKING:
     from main import Game
@@ -93,7 +95,59 @@ class Map:
                 if value:
                     self.world_map[(i, j)] = int(value)
 
-    def draw(self) -> None:
-        """Debug 2D top-down view of wall tiles."""
-        for x, y in self.world_map:
-            pg.draw.rect(self.game.screen, "darkgray", (x * 100, y * 100, 100, 100), 2)
+    def draw(
+        self,
+        margin: int = 12,
+        max_size_ratio: float = 0.30,  # 30% of the screen (width/height)
+        border_px: int = 1,
+    ) -> pg.Rect:
+        """
+        Draw a scaled debug view of the map (walls only) in the top-left corner.
+
+        The map is scaled to fit within a box sized as a fraction of the screen,
+        so larger/smaller custom maps won't render off-screen.
+
+        Args:
+            margin: Padding from the top-left corner in pixels.
+            max_size_ratio: Maximum fraction of screen width/height used for minimap.
+            border_px: Rectangle outline thickness for wall cells.
+
+        Returns:
+            The pygame.Rect area occupied by the minimap (useful for debugging/UI layout).
+        """
+        surf = self.game.screen
+        screen_w, screen_h = surf.get_size()
+
+        # Minimap bounding box (fit map into this)
+        max_w = int(screen_w * max_size_ratio)
+        max_h = int(screen_h * max_size_ratio)
+
+        # Avoid division by zero on weird/empty maps
+        cols = max(1, int(self.cols))
+        rows = max(1, int(self.rows))
+
+        # Uniform cell size so the whole map fits
+        cell = max(2, min(max_w // cols, max_h // rows))
+
+        map_px_w = cols * cell
+        map_px_h = rows * cell
+
+        x0 = WIDTH - margin - map_px_w
+        y0 = margin # HEIGHT - margin - map_px_h
+        minimap_rect = pg.Rect(x0, y0, map_px_w, map_px_h)
+
+        # Draw a background + outline so it’s readable
+        pg.draw.rect(surf, (0, 0, 0), minimap_rect)  # background
+        pg.draw.rect(surf, "white", minimap_rect, 1)  # border
+
+        # Draw wall cells
+        for (x, y), value in self.world_map.items():
+            # negative coords
+            if x < 0 or y < 0:
+                continue
+
+            rx = x0 + x * cell
+            ry = y0 + y * cell
+            pg.draw.rect(surf, value_to_color(value, MAX_TILE), (rx, ry, cell, cell), border_px)
+
+        return minimap_rect, cell

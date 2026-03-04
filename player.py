@@ -153,19 +153,32 @@ class Player:
         if self._is_walkable(int(self.x), int(self.y + dy * scale)):
             self.y += dy
 
-    def draw(self) -> None:
-        """Debug draw of the player in the top-down map view."""
+    def draw(self, minimap_rect: pg.Rect, cell: int) -> None:
+        """
+        Draw the player position and facing direction on the minimap.
+        """
+
+        x0 = minimap_rect.x
+        y0 = minimap_rect.y
+
+        px = x0 + self.x * cell
+        py = y0 + self.y * cell
+
+        # Direction line
+        line_len = cell * 1
+        dx = math.cos(self.angle) * line_len
+        dy = math.sin(self.angle) * line_len
+
         pg.draw.line(
             self.game.screen,
             "yellow",
-            (self.x * 100, self.y * 100),
-            (
-                self.x * 100 + WIDTH * math.cos(self.angle),
-                self.y * 100 + WIDTH * math.sin(self.angle),
-            ),
-            2,
+            (px, py),
+            (px + dx, py + dy),
+            1,
         )
-        pg.draw.circle(self.game.screen, "green", (self.x * 100, self.y * 100), 15)
+
+        # Player dot
+        pg.draw.circle(self.game.screen, "green", (int(px), int(py)), max(3, cell // 3))
 
     # ---------------------------------------------------------------------
     # Mouse look
