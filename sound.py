@@ -37,4 +37,4 @@ class Sound:
         self.player_pain = pg.mixer.Sound(self.path + "player_pain.wav")
 
         pg.mixer.music.load(self.path + "theme.mp3")
-        pg.mixer.music.set_volume(0.3)
+        pg.mixer.music.set_volume(0.1)

@@ -72,7 +72,7 @@ class Game:
         self.object_renderer.draw()
         self.weapon.draw()
         # Debug helpers:
-        minimap_rect, cell = self.map.draw(max_size_ratio=0.9)
+        minimap_rect, cell = self.map.draw(max_size_ratio=0.3)
         self.player.draw(minimap_rect, cell)
 
     def check_events(self) -> None:
