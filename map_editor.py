@@ -23,6 +23,7 @@ Notes
 from __future__ import annotations
 
 import argparse
+import colorsys
 from dataclasses import dataclass
 from pathlib import Path
 from typing import Optional, Tuple
@@ -31,6 +32,8 @@ import pygame as pg
 
 from map_io import MapData, load_map_json, save_map_json, normalize_grid
 
+MAX_TILE = 10
+
 
 @dataclass
 class EditorState:
@@ -38,6 +41,18 @@ class EditorState:
     show_grid: bool = True
     dragging: bool = False
     drag_start: Optional[Tuple[int, int]] = None
+
+
+def value_to_color(v: int, max_v: int) -> tuple[int, int, int]:
+    t = v / max_v  # normalize 0 -> 1
+
+    r, g, b = colorsys.hsv_to_rgb(t, 0.85, 1.0)
+
+    return (
+        int(r * 255),
+        int(g * 255),
+        int(b * 255),
+    )
 
 
 def clamp(v: int, lo: int, hi: int) -> int:
@@ -57,7 +72,7 @@ def draw_text(surf: pg.Surface, text: str, x: int, y: int) -> None:
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--path", default="resources/maps/level1.json")
-    parser.add_argument("--cols", type=int, default=16)
+    parser.add_argument("--cols", type=int, default=32)
     parser.add_argument("--rows", type=int, default=32)
     parser.add_argument("--cell", type=int, default=24)
     args = parser.parse_args()
@@ -130,12 +145,12 @@ def main() -> None:
                 elif event.key == pg.K_l:
                     reload()
                 elif event.key == pg.K_LEFTBRACKET:
-                    state.selected = clamp(state.selected - 1, 0, 9)
+                    state.selected = clamp(state.selected - 1, 0, MAX_TILE)
                 elif event.key == pg.K_RIGHTBRACKET:
-                    state.selected = clamp(state.selected + 1, 0, 9)
+                    state.selected = clamp(state.selected + 1, 0, MAX_TILE)
 
             if event.type == pg.MOUSEWHEEL:
-                state.selected = clamp(state.selected + event.y, 0, 9)
+                state.selected = clamp(state.selected + event.y, 0, MAX_TILE)
 
             if event.type == pg.MOUSEBUTTONDOWN:
                 tile = tile_at_mouse()
@@ -185,11 +200,7 @@ def main() -> None:
                 if v == 0:
                     continue
                 # simple value->color mapping
-                c = (
-                    60 + 18 * v,
-                    40 + 14 * v,
-                    80 + 10 * v,
-                )
+                c = value_to_color(v, MAX_TILE)
                 pg.draw.rect(screen, c, (x * cell, y * cell, cell, cell))
 
         if state.show_grid:
