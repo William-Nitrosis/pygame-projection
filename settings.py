@@ -68,7 +68,7 @@ NUM_RAYS: int = WIDTH // 2
 HALF_NUM_RAYS: int = NUM_RAYS // 2
 DELTA_ANGLE: float = FOV / NUM_RAYS
 
-MAX_DEPTH: int = 20
+MAX_DEPTH: int = 32
 
 SCREEN_DIST: float = HALF_WIDTH / math.tan(HALF_FOV)
 SCALE: int = WIDTH // NUM_RAYS
