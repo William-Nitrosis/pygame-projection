@@ -40,7 +40,7 @@ class ObjectHandler:
         # -----------------------------------------------------------------
         # NPC spawning
         # -----------------------------------------------------------------
-        self.enemies = 20  # npc count
+        self.enemies = 0  # npc count
         self.npc_types: list[Type[NPC]] = [SoldierNPC, CacoDemonNPC, CyberDemonNPC]
         self.weights = [70, 20, 10]
         self.restricted_area = {(i, j) for i in range(10) for j in range(10)}
@@ -109,7 +109,7 @@ class ObjectHandler:
         for npc in self.npc_list:
             npc.update()
 
-        self.check_win()
+        #self.check_win()
 
     def add_npc(self, npc: NPC) -> None:
         self.npc_list.append(npc)
