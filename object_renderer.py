@@ -35,40 +35,14 @@ class ObjectRenderer:
         )
         self.sky_offset = 0.0
 
-        self.blood_screen = self.get_texture("resources/textures/blood_screen.png", RES)
-
-        self.digit_size = 90
-        self.digit_images = [
-            self.get_texture(
-                f"resources/textures/digits/{i}.png", (self.digit_size, self.digit_size)
-            )
-            for i in range(11)
-        ]
-        self.digits = dict(zip(map(str, range(11)), self.digit_images))
-
-        self.game_over_image = self.get_texture("resources/textures/game_over.png", RES)
         self.win_image = self.get_texture("resources/textures/win.png", RES)
 
     def draw(self) -> None:
         self.draw_background()
         self.render_game_objects()
-        self.draw_player_health()
 
     def win(self) -> None:
         self.screen.blit(self.win_image, (0, 0))
-
-    def game_over(self) -> None:
-        self.screen.blit(self.game_over_image, (0, 0))
-
-    def draw_player_health(self) -> None:
-        health = str(self.game.player.health)
-        i = 0
-        for i, char in enumerate(health):
-            self.screen.blit(self.digits[char], (i * self.digit_size, 0))
-        self.screen.blit(self.digits["10"], ((i + 1) * self.digit_size, 0))
-
-    def player_damage(self) -> None:
-        self.screen.blit(self.blood_screen, (0, 0))
 
     def draw_background(self) -> None:
         # scroll sky based on player mouse delta (rel)

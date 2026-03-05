@@ -40,7 +40,6 @@ PLAYER_ROT_SPEED: float = 0.002
 
 # Used for collision checks (tuned with ms delta_time).
 PLAYER_SIZE_SCALE: float = 60.0
-PLAYER_MAX_HEALTH: int = 100
 
 # ---------------------------------------------------------------------------
 # Mouse look

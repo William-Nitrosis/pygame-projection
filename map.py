@@ -20,8 +20,7 @@ if TYPE_CHECKING:
     from main import Game
 
 
-# Optional: if this file exists, it will be used instead of the embedded map.
-# This makes it easy to iterate on levels using map_editor.py.
+# If this file exists, it will be used instead of the embedded map.
 DEFAULT_LEVEL_PATH = "resources/maps/level1.json"
 
 

@@ -24,11 +24,9 @@ from settings import (
     MOUSE_MAX_REL,
     MOUSE_SENSITIVITY,
     PLAYER_ANGLE,
-    PLAYER_MAX_HEALTH,
     PLAYER_POS,
     PLAYER_SIZE_SCALE,
     PLAYER_SPEED,
-    WIDTH,
 )
 
 if TYPE_CHECKING:
@@ -44,58 +42,10 @@ class Player:
         self.x, self.y = PLAYER_POS
         self.angle = PLAYER_ANGLE
 
-        self.shot: bool = False
-
-        self.health: int = PLAYER_MAX_HEALTH
         self.rel: int = 0
-
-        self.health_recovery_delay_ms = 700
-        self._health_time_prev = pg.time.get_ticks()
 
         # diagonal movement correction
         self.diag_move_corr = 1 / math.sqrt(2)
-
-    # ---------------------------------------------------------------------
-    # Health
-    # ---------------------------------------------------------------------
-
-    def recover_health(self) -> None:
-        """Passive health regeneration."""
-        if self._check_health_recovery_delay() and self.health < PLAYER_MAX_HEALTH:
-            self.health += 1
-
-    def _check_health_recovery_delay(self) -> bool:
-        time_now = pg.time.get_ticks()
-        if time_now - self._health_time_prev > self.health_recovery_delay_ms:
-            self._health_time_prev = time_now
-            return True
-        return False
-
-    def check_game_over(self) -> None:
-        if self.health < 1:
-            self.game.object_renderer.game_over()
-            pg.display.flip()
-            pg.time.delay(1500)
-            self.game.new_game()
-
-    def get_damage(self, damage: float) -> None:
-        """Apply damage and trigger feedback."""
-        self.health -= int(damage)
-        self.game.object_renderer.player_damage()
-        self.game.sound.player_pain.play()
-        self.check_game_over()
-
-    # ---------------------------------------------------------------------
-    # Input
-    # ---------------------------------------------------------------------
-
-    def single_fire_event(self, event: pg.event.Event) -> None:
-        """Handle single-shot fire input from mouse events."""
-        if event.type == pg.MOUSEBUTTONDOWN and event.button == 1:
-            if not self.shot and not self.game.weapon.reloading:
-                self.game.sound.shotgun.play()
-                self.shot = True
-                self.game.weapon.reloading = True
 
     # ---------------------------------------------------------------------
     # Movement / collision
@@ -201,7 +151,6 @@ class Player:
     def update(self) -> None:
         self.movement()
         self.mouse_control()
-        self.recover_health()
 
     @property
     def pos(self) -> tuple[float, float]:
