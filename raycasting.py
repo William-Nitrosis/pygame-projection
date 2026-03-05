@@ -1,14 +1,3 @@
-"""raycasting.py
-
-Wall raycasting and building the list of objects to render.
-
-This is the core "2.5D" technique:
-- Cast NUM_RAYS rays through the player's FOV.
-- For each ray, find the nearest wall intersection (vertical or horizontal).
-- Compute projected wall slice height and texture offset.
-- Provide (depth, surface, position) tuples for the renderer.
-"""
-
 from __future__ import annotations
 
 from typing import TYPE_CHECKING, List, Tuple

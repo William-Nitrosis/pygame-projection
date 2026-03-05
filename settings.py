@@ -1,14 +1,3 @@
-"""settings.py
-
-Central configuration for the raycasting "DOOM-like" pygame project.
-
-Notes:
-- `delta_time` used throughout the project is `Clock.tick(FPS)` (milliseconds).
-  Movement / animation constants in this repo are tuned for that.
-- Empty tiles in maps should be `0` (falsy). Wall tiles should be 1..N (truthy)
-  where the value selects the wall texture.
-"""
-
 from __future__ import annotations
 
 import math

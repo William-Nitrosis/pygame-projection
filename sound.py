@@ -1,12 +1,3 @@
-"""sound.py
-
-Audio loading and simple sound effect handles.
-
-This module loads:
-- music (theme)
-- weapon, NPC and player SFX
-"""
-
 from __future__ import annotations
 
 from typing import TYPE_CHECKING

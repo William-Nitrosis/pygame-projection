@@ -1,14 +1,3 @@
-"""player.py
-
-Player movement, input handling and health.
-
-Movement is in map-space (tiles are 1x1). Collision is grid-based using the
-Map.world_map lookup.
-
-Important: this project uses `game.delta_time` in **milliseconds** (from
-pygame.Clock.tick).
-"""
-
 from __future__ import annotations
 
 from typing import TYPE_CHECKING

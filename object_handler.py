@@ -1,12 +1,3 @@
-"""object_handler.py
-
-Spawns and updates non-player objects:
-- Static/animated decorative sprites
-- NPC enemies
-
-Also tracks NPC positions per-tick so pathfinding can avoid collisions.
-"""
-
 from __future__ import annotations
 
 from typing import TYPE_CHECKING

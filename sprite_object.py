@@ -1,12 +1,3 @@
-"""sprite_object.py
-
-Billboard sprites (static and animated) that live in world space and are rendered
-by projecting them into screen space via the player's view.
-
-These sprites are appended into `game.raycasting.objects_to_render` and then
-sorted by depth alongside walls (painter's algorithm).
-"""
-
 from __future__ import annotations
 
 from typing import TYPE_CHECKING, Deque, Tuple

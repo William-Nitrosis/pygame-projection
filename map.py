@@ -1,11 +1,3 @@
-"""map.py
-
-Grid map definition and world-map lookup structure.
-
-- `mini_map` is a 2D grid: 0 means empty, 1..N are wall texture ids.
-- `world_map` is a dict keyed by (x, y) tile coordinates for fast lookups.
-"""
-
 from __future__ import annotations
 
 from typing import TYPE_CHECKING, Dict, Tuple
