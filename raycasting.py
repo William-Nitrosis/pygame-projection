@@ -30,7 +30,7 @@ class RayCasting:
 
     def __init__(self, game: Game) -> None:
         self.game = game
-        self.ray_casting_result: List[Tuple[float, int, int, float]] = []
+        self.ray_casting_result: List[Tuple[float, int, int, float, bool]] = []
         self.objects_to_render: List[Tuple[float, pg.Surface, Tuple[int, int]]] = []
         self.textures = self.game.object_renderer.wall_textures
 
@@ -38,7 +38,7 @@ class RayCasting:
         """Turn raycast results into scaled wall column surfaces."""
         self.objects_to_render = []
 
-        for ray, (depth, proj_height, texture, offset) in enumerate(
+        for ray, (depth, proj_height, texture, offset, is_vertical) in enumerate(
             self.ray_casting_result
         ):
             tex = self.textures[texture]
@@ -59,6 +59,15 @@ class RayCasting:
                 )
                 wall_column = pg.transform.scale(wall_column, (SCALE, HEIGHT))
                 wall_pos = (ray * SCALE, 0)
+
+            # fake contrast: darken one wall orientation
+            if is_vertical:
+                distance_darkness = max(0.35, 1.0 / (1.0 + depth * 0.1))
+                shade_value = int(255 * distance_darkness)
+
+                shade = pg.Surface(wall_column.get_size(), pg.SRCALPHA)
+                shade.fill((shade_value, shade_value, shade_value, 255))
+                wall_column.blit(shade, (0, 0), special_flags=pg.BLEND_RGBA_MULT)
 
             self.objects_to_render.append((depth, wall_column, wall_pos))
 
@@ -129,10 +138,12 @@ class RayCasting:
                 depth, texture = depth_vert, texture_vert
                 y_vert %= 1
                 offset = y_vert if cos_a > 0 else (1 - y_vert)
+                is_vertical = True
             else:
                 depth, texture = depth_hor, texture_hor
                 x_hor %= 1
                 offset = (1 - x_hor) if sin_a > 0 else x_hor
+                is_vertical = False
 
             # remove fishbowl effect
             depth *= math.cos(self.game.player.angle - ray_angle)
@@ -140,7 +151,9 @@ class RayCasting:
             # projection
             proj_height = int(SCREEN_DIST / (depth + 0.0001))
 
-            self.ray_casting_result.append((depth, proj_height, texture, offset))
+            self.ray_casting_result.append(
+                (depth, proj_height, texture, offset, is_vertical)
+            )
             ray_angle += DELTA_ANGLE
 
     def update(self) -> None:

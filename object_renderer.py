@@ -38,6 +38,16 @@ class ObjectRenderer:
         self.sky_offset = (self.sky_offset + 4.5 * self.game.player.rel) % WIDTH
         self.screen.blit(self.sky_image, (-self.sky_offset, 0))
         self.screen.blit(self.sky_image, (-self.sky_offset + WIDTH, 0))
+        
+        # gradient ceiling
+        for y in range(HALF_HEIGHT):
+            t = y / HALF_HEIGHT
+            c = (
+                int(20 + 20 * t),
+                int(24 + 18 * t),
+                int(32 + 12 * t),
+            )
+            pg.draw.line(self.screen, c, (0, y), (WIDTH, y))
 
         # floor
         pg.draw.rect(self.screen, FLOOR_COLOR, (0, HALF_HEIGHT, WIDTH, HEIGHT))
@@ -61,4 +71,6 @@ class ObjectRenderer:
             3: self.get_texture("resources/textures/3.png"),
             4: self.get_texture("resources/textures/4.png"),
             5: self.get_texture("resources/textures/5.png"),
+            6: self.get_texture("resources/textures/6.png"),
+            7: self.get_texture("resources/textures/7.png"),
         }
