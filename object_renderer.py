@@ -40,14 +40,14 @@ class ObjectRenderer:
         self.screen.blit(self.sky_image, (-self.sky_offset + WIDTH, 0))
         
         # gradient ceiling
-        for y in range(HALF_HEIGHT):
-            t = y / HALF_HEIGHT
-            c = (
-                int(20 + 20 * t),
-                int(24 + 18 * t),
-                int(32 + 12 * t),
-            )
-            pg.draw.line(self.screen, c, (0, y), (WIDTH, y))
+        # for y in range(HALF_HEIGHT):
+        #     t = 8 - y / HALF_HEIGHT
+        #     c = (
+        #         int(20 + 20 * t),
+        #         int(24 + 18 * t),
+        #         int(32 + 12 * t),
+        #     )
+        #     pg.draw.line(self.screen, c, (0, y), (WIDTH, y))
 
         # floor
         pg.draw.rect(self.screen, FLOOR_COLOR, (0, HALF_HEIGHT, WIDTH, HEIGHT))
@@ -74,4 +74,5 @@ class ObjectRenderer:
             6: self.get_texture("resources/textures/6.png"),
             7: self.get_texture("resources/textures/7.png"),
             8: self.get_texture("resources/textures/8.png"),
+            9: self.get_texture("resources/textures/9.png"),
         }

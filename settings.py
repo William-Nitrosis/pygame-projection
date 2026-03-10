@@ -43,7 +43,7 @@ MOUSE_BORDER_RIGHT: int = WIDTH - MOUSE_BORDER_LEFT
 # Colors
 # ---------------------------------------------------------------------------
 
-FLOOR_COLOR: str = "#2F2F2F"
+FLOOR_COLOR: str = "#B7753D"
 
 # ---------------------------------------------------------------------------
 # Raycasting
