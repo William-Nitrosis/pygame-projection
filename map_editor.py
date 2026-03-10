@@ -32,7 +32,7 @@ import pygame as pg
 
 from map_io import MapData, load_map_json, save_map_json, normalize_grid
 
-MAX_TILE = 9
+MAX_TILE = 8
 
 
 @dataclass

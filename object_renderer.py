@@ -38,7 +38,7 @@ class ObjectRenderer:
 
         self.win_image = self.get_texture("resources/textures/win.png", RES)
 
-        self.floor_texture = self.get_texture("resources/textures/floor.png")
+        self.floor_texture = self.get_texture("resources/textures/sand_floor.png")
         self.floor_buffer = pg.Surface(
             (WIDTH // FLOOR_RENDER_SCALE, HALF_HEIGHT // FLOOR_RENDER_SCALE)
         ).convert()
@@ -82,7 +82,6 @@ class ObjectRenderer:
             6: self.get_texture("resources/textures/6.png"),
             7: self.get_texture("resources/textures/7.png"),
             8: self.get_texture("resources/textures/8.png"),
-            9: self.get_texture("resources/textures/9.png"),
         }
 
     def draw_textured_floor_fast(self) -> None:
