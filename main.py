@@ -20,7 +20,7 @@ class Game:
         pg.init()
         pg.mouse.set_visible(False)
 
-        self.screen = pg.display.set_mode(RES)
+        self.screen = pg.display.set_mode(RES, pg.SCALED)
         pg.display.set_caption("PyGame Maze Raycaster")
         pg.event.set_grab(True)
 

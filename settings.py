@@ -7,8 +7,8 @@ from typing import Tuple
 # Window / timing
 # ---------------------------------------------------------------------------
 
-WIDTH: int = 1600
-HEIGHT: int = 900
+WIDTH: int = 800
+HEIGHT: int = 600
 RES = (WIDTH, HEIGHT)
 HALF_WIDTH = WIDTH // 2
 HALF_HEIGHT = HEIGHT // 2
@@ -67,3 +67,6 @@ SCALE: int = WIDTH // NUM_RAYS
 
 TEXTURE_SIZE: int = 256
 HALF_TEXTURE_SIZE: int = TEXTURE_SIZE // 2
+
+FLOOR_RENDER_SCALE: int = 4
+FLOOR_TEX_SCALE: float = 1.0
