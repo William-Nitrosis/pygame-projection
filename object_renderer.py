@@ -20,7 +20,7 @@ class ObjectRenderer:
         self.wall_textures = self.load_wall_textures()
 
         self.sky_image = self.get_texture(
-            "resources/textures/sky.png", (WIDTH, HALF_HEIGHT)
+            "resources/textures/sky4.png", (WIDTH, HALF_HEIGHT)
         )
         self.sky_offset = 0.0
 
@@ -35,7 +35,7 @@ class ObjectRenderer:
 
     def draw_background(self) -> None:
         # scroll sky based on player mouse delta (rel)
-        self.sky_offset = (self.sky_offset + 4.5 * self.game.player.rel) % WIDTH
+        self.sky_offset = (self.sky_offset + 4.0 * self.game.player.rel) % WIDTH
         self.screen.blit(self.sky_image, (-self.sky_offset, 0))
         self.screen.blit(self.sky_image, (-self.sky_offset + WIDTH, 0))
         
