@@ -114,7 +114,6 @@ class ObjectRenderer:
             if p <= 0:
                 continue
 
-            # this is the important fix
             row_dist = (camera_height * SCREEN_DIST) / p
 
             start_x = player.x + row_dist * left_dx
