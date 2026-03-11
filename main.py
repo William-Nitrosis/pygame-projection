@@ -57,7 +57,7 @@ class Game:
         """Draw the current frame."""
         self.object_renderer.draw()
         # Debug helpers:
-        minimap_rect, cell = self.map.draw(max_size_ratio=0.3)
+        minimap_rect, cell = self.map.draw(max_size_ratio=0.95)
         self.player.draw(minimap_rect, cell)
 
     def check_events(self) -> None:

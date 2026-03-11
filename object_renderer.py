@@ -6,12 +6,10 @@ from typing import TYPE_CHECKING, Dict
 import pygame as pg
 
 from settings import (
-    FLOOR_COLOR,
     FLOOR_RENDER_SCALE,
     FLOOR_TEX_SCALE,
     HALF_FOV,
     HALF_HEIGHT,
-    HEIGHT,
     RES,
     SCREEN_DIST,
     TEXTURE_SIZE,
@@ -57,7 +55,6 @@ class ObjectRenderer:
         self.screen.blit(self.sky_image, (-self.sky_offset + WIDTH, 0))
 
         # floor
-        # pg.draw.rect(self.screen, FLOOR_COLOR, (0, HALF_HEIGHT, WIDTH, HEIGHT))
         self.draw_textured_floor_fast()
 
     def render_game_objects(self) -> None:
