@@ -36,7 +36,7 @@ class Player:
         # diagonal movement correction
         self.diag_move_corr = 1 / math.sqrt(2)
 
-        self.font = pg.font.SysFont("Consolas", 14)
+        self.font = pg.font.SysFont("Consolas", 20, True)
 
     # ---------------------------------------------------------------------
     # Movement / collision
@@ -122,7 +122,10 @@ class Player:
         pg.draw.circle(self.game.screen, "green", (int(px), int(py)), max(3, cell // 3))
 
         t_surf = self.font.render(
-            f"Player POS: {(px - minimap_rect.x) / cell:.1f}, {(py - minimap_rect.y) / cell:.1f}", True, "white"
+            f"Player POS: {(px - minimap_rect.x) / cell:.1f}, {(py - minimap_rect.y) / cell:.1f}",
+            True,
+            "white",
+            "black",
         )
         # Player pos
         self.game.screen.blit(t_surf, t_surf.get_rect(midtop=(minimap_rect.midbottom)))
