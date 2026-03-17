@@ -24,7 +24,6 @@ class MapData:
     """Map payload stored on disk."""
 
     grid: Grid
-    # Optional extra metadata for future features (spawn points, pickups, etc.)
     spawn: Optional[tuple[float, float]] = None
     meta: Optional[dict[str, Any]] = None
 

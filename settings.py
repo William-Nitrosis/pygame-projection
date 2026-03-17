@@ -13,7 +13,7 @@ RES = (WIDTH, HEIGHT)
 HALF_WIDTH = WIDTH // 2
 HALF_HEIGHT = HEIGHT // 2
 
-# FPS=0 means "uncapped" for pygame's Clock.tick.
+# FPS = 0 means "uncapped" for pygame's Clock.tick.
 FPS: int = 0
 
 # ---------------------------------------------------------------------------

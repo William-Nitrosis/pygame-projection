@@ -199,7 +199,7 @@ def main() -> None:
                 v = grid[y][x]
                 if v == 0:
                     continue
-                # simple value->color mapping
+                # simple value -> color mapping
                 c = value_to_color(v, MAX_TILE)
                 pg.draw.rect(screen, c, (x * cell, y * cell, cell, cell))
 

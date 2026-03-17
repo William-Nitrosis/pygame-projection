@@ -36,7 +36,7 @@ class Player:
         # diagonal movement correction
         self.diag_move_corr = 1 / math.sqrt(2)
 
-        self.font = pg.font.SysFont("Consolas", 20, True)
+        self.font = pg.font.SysFont("Consolas", 14, True)
 
     # ---------------------------------------------------------------------
     # Movement / collision

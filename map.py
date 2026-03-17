@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 from typing import TYPE_CHECKING, Dict, Tuple
+from pathlib import Path
 
 import pygame as pg
 
@@ -18,8 +19,9 @@ DEFAULT_LEVEL_PATH = "resources/maps/level1.json"
 class Map:
     """Holds the level grid and builds a fast lookup structure for walls."""
 
-    def __init__(self, game: Game) -> None:
+    def __init__(self, game: Game, level_path: str = DEFAULT_LEVEL_PATH) -> None:
         self.game = game
+        self.level_path = Path(level_path)
 
         self.mini_map = self._load_or_default()
         self.world_map: Dict[Tuple[int, int], int] = {}
@@ -31,11 +33,8 @@ class Map:
 
     def _load_or_default(self):
         try:
-            from pathlib import Path
-
-            p = Path(DEFAULT_LEVEL_PATH)
-            if p.exists():
-                return load_map_json(p).grid
+            if self.level_path.exists():
+                return load_map_json(self.level_path).grid
         except Exception:
             pass
         return []
@@ -49,57 +48,41 @@ class Map:
     def draw(
         self,
         margin: int = 12,
-        max_size_ratio: float = 0.30,  # 30% of the screen (width/height)
+        max_size_ratio: float = 0.30,
         border_px: int = 1,
     ) -> pg.Rect:
-        """
-        Draw a scaled debug view of the map (walls only) in the top-left corner.
-
-        The map is scaled to fit within a box sized as a fraction of the screen,
-        so larger/smaller custom maps won't render off-screen.
-
-        Args:
-            margin: Padding from the top-left corner in pixels.
-            max_size_ratio: Maximum fraction of screen width/height used for minimap.
-            border_px: Rectangle outline thickness for wall cells.
-
-        Returns:
-            The pygame.Rect area occupied by the minimap (useful for debugging/UI layout).
-        """
         surf = self.game.screen
         screen_w, screen_h = surf.get_size()
 
-        # Minimap bounding box (fit map into this)
         max_w = int(screen_w * max_size_ratio)
         max_h = int(screen_h * max_size_ratio)
 
-        # Avoid division by zero on weird/empty maps
         cols = max(1, int(self.cols))
         rows = max(1, int(self.rows))
 
-        # Uniform cell size so the whole map fits
         cell = max(2, min(max_w // cols, max_h // rows))
 
         map_px_w = cols * cell
         map_px_h = rows * cell
 
         x0 = WIDTH - margin - map_px_w
-        y0 = margin # HEIGHT - margin - map_px_h
+        y0 = margin
         minimap_rect = pg.Rect(x0, y0, map_px_w, map_px_h)
 
-        # Draw a background + outline so it’s readable
-        pg.draw.rect(surf, (0, 0, 0), minimap_rect)  # background
-        pg.draw.rect(surf, "white", minimap_rect, 1)  # border
+        pg.draw.rect(surf, (0, 0, 0), minimap_rect)
+        pg.draw.rect(surf, "white", minimap_rect, 1)
 
-        # Draw wall cells
         for (x, y), value in self.world_map.items():
-            # negative coords
             if x < 0 or y < 0:
                 continue
 
             rx = x0 + x * cell
             ry = y0 + y * cell
-            pg.draw.rect(surf, value_to_color(value, MAX_TILE), (rx, ry, cell, cell), border_px)
-            
+            pg.draw.rect(
+                surf,
+                value_to_color(value, MAX_TILE),
+                (rx, ry, cell, cell),
+                border_px,
+            )
 
         return minimap_rect, cell

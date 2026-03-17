@@ -46,6 +46,10 @@ class SpriteObject:
         self.sprite_scale = float(scale)
         self.sprite_height_shift = float(shift)
 
+        # gameplay flags
+        self.is_goal = False
+        self.trigger_radius = 0.6
+
     def get_sprite_projection(self) -> None:
         proj = SCREEN_DIST / self.norm_dist * self.sprite_scale
         proj_width = int(proj * self.image_ratio)
@@ -103,6 +107,8 @@ class AnimatedSprite(SpriteObject):
         scale: float = 0.8,
         shift: float = 0.16,
         animation_time: int = 120,
+        is_goal: bool = False,
+        trigger_radius: float = 0.6,
     ) -> None:
         super().__init__(game, path, pos, scale, shift)
 
@@ -112,6 +118,9 @@ class AnimatedSprite(SpriteObject):
 
         self.animation_time_prev = pg.time.get_ticks()
         self.animation_trigger = False
+
+        self.is_goal = is_goal
+        self.trigger_radius = trigger_radius
 
     def update(self) -> None:
         super().update()

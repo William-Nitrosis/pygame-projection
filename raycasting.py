@@ -60,7 +60,7 @@ class RayCasting:
                 wall_column = pg.transform.scale(wall_column, (SCALE, HEIGHT))
                 wall_pos = (ray * SCALE, 0)
 
-            # fake contrast: darken one wall orientation
+            # fake contrast - darken one wall orientation
             if is_vertical:
                 distance_darkness = max(0.35, 1.0 / (1.0 + depth * 0.1))
                 shade_value = int(255 * distance_darkness)
