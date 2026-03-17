@@ -1,7 +1,7 @@
 from __future__ import annotations
 
-from typing import TYPE_CHECKING, Dict, Tuple
 from pathlib import Path
+from typing import TYPE_CHECKING, Any, Dict, Tuple
 
 import pygame as pg
 
@@ -17,27 +17,37 @@ DEFAULT_LEVEL_PATH = "resources/maps/level1.json"
 
 
 class Map:
-    """Holds the level grid and builds a fast lookup structure for walls."""
+    """Holds the level grid and level metadata loaded from JSON."""
 
     def __init__(self, game: Game, level_path: str = DEFAULT_LEVEL_PATH) -> None:
         self.game = game
         self.level_path = Path(level_path)
 
-        self.mini_map = self._load_or_default()
+        self.mini_map: list[list[int]] = []
         self.world_map: Dict[Tuple[int, int], int] = {}
 
+        self.spawn: tuple[float, float] | None = None
+        self.meta: dict[str, Any] = {}
+
+        self._load()
         self.rows = len(self.mini_map)
         self.cols = len(self.mini_map[0]) if self.rows else 0
-
         self._build_world_map()
 
-    def _load_or_default(self):
+    def _load(self) -> None:
         try:
             if self.level_path.exists():
-                return load_map_json(self.level_path).grid
+                data = load_map_json(self.level_path)
+                self.mini_map = data.grid
+                self.spawn = data.spawn
+                self.meta = data.meta or {}
+                return
         except Exception:
             pass
-        return []
+
+        self.mini_map = []
+        self.spawn = None
+        self.meta = {}
 
     def _build_world_map(self) -> None:
         for j, row in enumerate(self.mini_map):
@@ -50,7 +60,8 @@ class Map:
         margin: int = 12,
         max_size_ratio: float = 0.30,
         border_px: int = 1,
-    ) -> pg.Rect:
+    ) -> tuple[pg.Rect, int]:
+        """Draw a scaled debug view of the map in the top-right corner."""
         surf = self.game.screen
         screen_w, screen_h = surf.get_size()
 

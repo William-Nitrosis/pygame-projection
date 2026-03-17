@@ -28,12 +28,12 @@ class Player:
     def __init__(self, game: Game) -> None:
         self.game = game
 
-        self.x, self.y = PLAYER_POS
+        spawn = game.map.spawn if game.map.spawn is not None else PLAYER_POS
+        self.x, self.y = spawn
         self.angle = PLAYER_ANGLE
 
         self.rel: int = 0
 
-        # diagonal movement correction
         self.diag_move_corr = 1 / math.sqrt(2)
 
         self.font = pg.font.SysFont("Consolas", 14, True)

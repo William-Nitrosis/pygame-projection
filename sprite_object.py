@@ -24,6 +24,8 @@ class SpriteObject:
         pos: Tuple[float, float] = (10.5, 3.5),
         scale: float = 0.7,
         shift: float = 0.27,
+        is_goal: bool = False,
+        trigger_radius: float = 0.6,
     ) -> None:
         self.game = game
         self.player = game.player
@@ -46,9 +48,8 @@ class SpriteObject:
         self.sprite_scale = float(scale)
         self.sprite_height_shift = float(shift)
 
-        # gameplay flags
-        self.is_goal = False
-        self.trigger_radius = 0.6
+        self.is_goal = bool(is_goal)
+        self.trigger_radius = float(trigger_radius)
 
     def get_sprite_projection(self) -> None:
         proj = SCREEN_DIST / self.norm_dist * self.sprite_scale
@@ -110,7 +111,15 @@ class AnimatedSprite(SpriteObject):
         is_goal: bool = False,
         trigger_radius: float = 0.6,
     ) -> None:
-        super().__init__(game, path, pos, scale, shift)
+        super().__init__(
+            game,
+            path=path,
+            pos=pos,
+            scale=scale,
+            shift=shift,
+            is_goal=is_goal,
+            trigger_radius=trigger_radius,
+        )
 
         self.animation_time = int(animation_time)
         self.path = path.rsplit("/", 1)[0]
@@ -118,9 +127,6 @@ class AnimatedSprite(SpriteObject):
 
         self.animation_time_prev = pg.time.get_ticks()
         self.animation_trigger = False
-
-        self.is_goal = is_goal
-        self.trigger_radius = trigger_radius
 
     def update(self) -> None:
         super().update()
