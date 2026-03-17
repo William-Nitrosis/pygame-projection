@@ -161,7 +161,7 @@ def ensure_meta(meta: Optional[dict[str, Any]]) -> dict[str, Any]:
 
 def main() -> None:
     parser = argparse.ArgumentParser()
-    parser.add_argument("--path", default="resources/maps/level3.json")
+    parser.add_argument("--path", default="resources/maps/level4.json")
     parser.add_argument("--cols", type=int, default=32)
     parser.add_argument("--rows", type=int, default=32)
     parser.add_argument("--cell", type=int, default=24)

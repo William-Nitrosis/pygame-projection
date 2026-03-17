@@ -33,8 +33,9 @@ class Game:
             "resources/maps/level1.json",
             "resources/maps/level2.json",
             "resources/maps/level3.json",
+            "resources/maps/level4.json",
         ]
-        self.level_index = 0
+        self.level_index = 1
 
         self.level_complete = False
         self.level_complete_time = 0
