@@ -2,1055 +2,202 @@
     "grid": [
         [
             8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8,
-            8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8,
-            8, 8
+            8, 8, 8, 8, 8, 8, 8, 8, 4
         ],
         [
-            8, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2,
-            0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 3, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0,
-            3, 8
+            7, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 4
         ],
         [
-            8, 0, 0, 0, 1, 0, 1, 1, 1, 0, 1, 0, 1, 1, 1, 1, 2, 0, 2, 2, 2, 0, 2,
-            0, 2, 0, 2, 2, 2, 0, 2, 0, 3, 0, 3, 0, 3, 3, 3, 0, 3, 0, 3, 3, 3, 0,
-            3, 8
+            7, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 4
         ],
         [
-            8, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 2, 0, 2, 0, 0, 0, 0,
-            0, 2, 0, 0, 0, 0, 0, 2, 0, 3, 0, 3, 0, 0, 0, 3, 0, 3, 0, 0, 0, 3, 0,
-            3, 8
+            7, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 4
         ],
         [
-            8, 0, 1, 0, 1, 1, 1, 0, 1, 0, 1, 0, 0, 0, 1, 1, 2, 0, 2, 0, 2, 2, 2,
-            0, 2, 0, 2, 2, 2, 2, 2, 0, 3, 0, 3, 0, 3, 0, 3, 0, 3, 0, 3, 0, 3, 0,
-            3, 8
+            7, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 4
         ],
         [
-            8, 0, 1, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 2, 0, 2, 0, 2, 0, 0,
-            0, 0, 0, 2, 0, 0, 0, 0, 0, 3, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 0,
-            3, 8
+            7, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 4
         ],
         [
-            8, 0, 1, 0, 1, 0, 1, 0, 1, 1, 1, 0, 0, 0, 1, 0, 2, 0, 2, 0, 2, 0, 2,
-            2, 2, 0, 2, 0, 2, 2, 2, 2, 3, 0, 3, 3, 3, 0, 3, 3, 3, 3, 3, 3, 3, 0,
-            3, 8
+            7, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 4
         ],
         [
-            8, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0, 2, 0, 0, 0, 0,
-            0, 0, 0, 2, 0, 2, 0, 0, 0, 3, 0, 0, 0, 0, 0, 3, 0, 3, 0, 0, 0, 0, 0,
-            3, 8
+            7, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 4
         ],
         [
-            8, 0, 1, 1, 1, 1, 1, 1, 1, 0, 1, 0, 1, 0, 1, 0, 2, 0, 2, 2, 2, 0, 2,
-            0, 0, 0, 2, 0, 2, 2, 2, 0, 3, 3, 3, 0, 3, 0, 3, 0, 3, 0, 3, 3, 3, 3,
-            3, 8
+            7, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 4
         ],
         [
-            8, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 2, 0, 2, 0, 0, 0, 2,
-            0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 0, 3, 0, 0, 0, 0, 0,
-            3, 8
+            7, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 4
         ],
         [
-            8, 1, 1, 0, 1, 0, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 2, 0, 2, 2, 2, 2, 2,
-            0, 2, 0, 2, 2, 2, 2, 2, 2, 3, 0, 3, 0, 3, 3, 3, 0, 3, 3, 3, 0, 3, 0,
-            3, 8
+            7, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 4
         ],
         [
-            8, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0,
-            0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0,
-            3, 8
+            7, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 4
         ],
         [
-            8, 0, 1, 0, 0, 0, 1, 1, 1, 1, 1, 0, 1, 1, 1, 0, 2, 0, 2, 0, 2, 0, 2,
-            0, 2, 2, 2, 0, 2, 0, 2, 2, 3, 3, 3, 0, 3, 0, 3, 3, 3, 3, 3, 0, 3, 0,
-            3, 8
+            7, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 4
         ],
         [
-            8, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 2, 0, 2, 0, 2, 0, 0,
-            0, 2, 0, 2, 0, 0, 0, 2, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0,
-            3, 8
+            7, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 4
         ],
         [
-            8, 0, 1, 0, 0, 0, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 2, 0, 2, 0, 2, 0, 2,
-            2, 2, 0, 2, 2, 2, 0, 2, 0, 3, 0, 3, 0, 3, 3, 3, 0, 3, 3, 3, 3, 3, 0,
-            3, 8
+            7, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 4
         ],
         [
-            8, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0, 0, 2, 0, 2, 0, 0,
-            0, 0, 0, 0, 0, 2, 0, 0, 0, 3, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 3, 0,
-            3, 8
+            7, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 4
         ],
         [
-            8, 4, 4, 0, 4, 0, 4, 4, 4, 0, 4, 0, 4, 0, 4, 0, 5, 0, 5, 0, 5, 5, 5,
-            0, 5, 0, 5, 5, 5, 0, 5, 0, 6, 6, 6, 6, 6, 0, 6, 6, 6, 6, 6, 0, 6, 0,
-            6, 8
+            7, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 4
         ],
         [
-            8, 0, 4, 0, 4, 0, 4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0, 0, 5, 0, 0, 0, 0,
-            0, 5, 0, 5, 0, 0, 0, 0, 0, 0, 0, 6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 6, 0,
-            6, 8
+            7, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 4
         ],
         [
-            8, 0, 4, 0, 4, 4, 4, 0, 4, 0, 4, 4, 4, 4, 4, 0, 5, 0, 5, 5, 5, 5, 5,
-            5, 5, 0, 5, 0, 5, 5, 5, 0, 6, 0, 6, 0, 6, 0, 6, 6, 6, 0, 6, 6, 6, 0,
-            6, 8
+            7, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 4
         ],
         [
-            8, 0, 4, 0, 0, 0, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 0, 5, 0, 0, 0, 0,
-            0, 0, 0, 5, 0, 0, 0, 0, 0, 6, 0, 6, 0, 6, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-            6, 8
+            7, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 4
         ],
         [
-            8, 0, 4, 4, 4, 0, 4, 0, 4, 4, 4, 4, 4, 4, 4, 4, 5, 0, 5, 0, 5, 5, 5,
-            5, 5, 5, 5, 5, 5, 5, 5, 0, 6, 0, 6, 6, 6, 0, 6, 6, 6, 6, 6, 0, 6, 0,
-            6, 8
+            7, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 4
         ],
         [
-            8, 0, 0, 0, 4, 0, 4, 0, 0, 0, 0, 0, 4, 0, 4, 0, 0, 0, 5, 0, 5, 0, 0,
-            0, 0, 0, 5, 0, 0, 0, 5, 0, 6, 0, 0, 0, 6, 0, 6, 0, 0, 0, 0, 0, 6, 0,
-            6, 8
+            7, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 4
         ],
         [
-            8, 4, 4, 0, 4, 0, 4, 4, 4, 4, 4, 0, 4, 0, 4, 0, 5, 5, 5, 0, 5, 0, 5,
-            5, 5, 0, 5, 0, 5, 0, 5, 0, 6, 6, 6, 0, 6, 0, 6, 0, 6, 0, 6, 6, 6, 0,
-            6, 8
+            7, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 4
         ],
         [
-            8, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0, 0, 0, 0, 4, 0, 0, 0, 0, 0, 5, 0, 0,
-            0, 0, 0, 5, 0, 5, 0, 5, 0, 0, 0, 6, 0, 0, 0, 0, 0, 6, 0, 0, 0, 0, 0,
-            6, 8
+            7, 0, 4, 2, 2, 2, 2, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 4
         ],
         [
-            8, 0, 4, 4, 4, 0, 4, 0, 4, 0, 4, 4, 4, 4, 4, 0, 5, 5, 5, 0, 5, 0, 5,
-            5, 5, 0, 5, 0, 5, 0, 5, 0, 6, 0, 6, 6, 6, 6, 6, 0, 6, 0, 6, 6, 6, 0,
-            6, 8
+            7, 0, 4, 2, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 4
         ],
         [
-            8, 0, 0, 0, 0, 0, 4, 0, 0, 0, 4, 0, 4, 0, 0, 0, 0, 0, 5, 0, 0, 0, 5,
-            0, 0, 0, 0, 0, 5, 0, 0, 0, 6, 0, 0, 0, 0, 0, 6, 0, 6, 0, 6, 0, 0, 0,
-            6, 8
+            7, 0, 4, 2, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 4
         ],
         [
-            8, 0, 4, 4, 4, 4, 4, 0, 4, 0, 4, 0, 4, 0, 4, 0, 5, 0, 5, 5, 5, 5, 5,
-            5, 5, 0, 5, 0, 5, 5, 5, 0, 6, 0, 6, 6, 6, 0, 6, 0, 6, 0, 6, 0, 6, 6,
-            6, 8
+            7, 0, 3, 2, 2, 2, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 4
         ],
         [
-            8, 0, 4, 0, 0, 0, 0, 0, 4, 0, 0, 0, 4, 0, 4, 0, 5, 0, 0, 0, 0, 0, 0,
-            0, 0, 0, 5, 0, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 6, 0, 6, 0, 6, 0, 0, 0,
-            6, 8
+            7, 0, 0, 2, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 4
         ],
         [
-            8, 0, 4, 4, 4, 0, 4, 0, 4, 0, 4, 0, 4, 0, 4, 0, 5, 0, 5, 0, 0, 0, 0,
-            0, 0, 0, 5, 0, 5, 0, 5, 5, 6, 6, 6, 6, 6, 6, 6, 0, 6, 0, 6, 6, 6, 6,
-            6, 8
+            7, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 4
         ],
         [
-            8, 0, 0, 0, 0, 0, 4, 0, 0, 0, 0, 0, 4, 0, 4, 0, 0, 0, 5, 0, 0, 0, 0,
-            0, 0, 0, 5, 0, 5, 0, 0, 0, 0, 0, 6, 0, 0, 0, 0, 0, 6, 0, 0, 0, 0, 0,
-            6, 8
+            4, 4, 0, 2, 2, 2, 2, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 4
         ],
         [
-            8, 0, 4, 4, 4, 4, 4, 0, 4, 0, 4, 0, 4, 0, 4, 0, 5, 0, 5, 5, 5, 5, 5,
-            0, 0, 0, 5, 0, 5, 0, 5, 0, 6, 0, 6, 0, 6, 6, 6, 0, 6, 0, 6, 0, 6, 0,
-            6, 8
+            7, 0, 0, 0, 4, 4, 4, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 4
         ],
         [
-            8, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0, 0, 0, 0, 4, 0, 0, 0, 0, 0, 0, 0, 5,
-            0, 0, 0, 0, 0, 0, 0, 0, 0, 6, 0, 6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 6, 0,
-            6, 8
-        ],
-        [
-            8, 7, 7, 0, 7, 0, 7, 7, 7, 0, 7, 7, 7, 0, 7, 0, 8, 0, 8, 0, 8, 8, 8,
-            0, 8, 0, 8, 0, 0, 0, 0, 0, 6, 0, 6, 0, 4, 8, 8, 0, 2, 2, 4, 0, 2, 0,
-            4, 8
-        ],
-        [
-            8, 0, 0, 0, 0, 0, 7, 0, 0, 0, 7, 0, 0, 0, 7, 0, 0, 0, 8, 0, 0, 0, 0,
-            0, 8, 0, 8, 0, 0, 0, 0, 0, 2, 0, 0, 0, 4, 0, 8, 0, 0, 0, 2, 0, 2, 0,
-            4, 8
-        ],
-        [
-            8, 0, 7, 7, 7, 0, 7, 0, 7, 7, 7, 0, 7, 7, 7, 0, 8, 8, 8, 8, 8, 8, 8,
-            8, 8, 0, 8, 0, 0, 0, 0, 0, 2, 2, 6, 6, 8, 0, 2, 0, 8, 0, 6, 8, 8, 0,
-            2, 8
-        ],
-        [
-            8, 0, 0, 0, 0, 0, 0, 0, 0, 0, 7, 0, 7, 0, 0, 0, 8, 0, 8, 0, 0, 0, 0,
-            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 6, 0, 0, 0, 4, 0, 6, 0, 0, 0,
-            2, 8
-        ],
-        [
-            8, 0, 7, 0, 0, 0, 0, 0, 7, 7, 7, 0, 7, 0, 7, 7, 8, 0, 8, 0, 8, 8, 8,
-            8, 8, 0, 8, 0, 8, 0, 8, 0, 2, 6, 8, 4, 6, 0, 4, 0, 2, 0, 6, 0, 4, 0,
-            4, 8
-        ],
-        [
-            8, 0, 0, 0, 0, 0, 0, 0, 7, 0, 0, 0, 7, 0, 7, 0, 0, 0, 0, 0, 8, 0, 0,
-            0, 8, 0, 8, 0, 8, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 6, 0, 4, 0,
-            2, 8
-        ],
-        [
-            8, 7, 7, 7, 7, 7, 7, 0, 7, 0, 7, 7, 7, 0, 7, 0, 8, 0, 8, 8, 8, 0, 8,
-            0, 8, 8, 8, 0, 8, 0, 8, 8, 2, 0, 4, 0, 6, 4, 2, 6, 8, 0, 6, 0, 4, 0,
-            6, 8
-        ],
-        [
-            8, 0, 0, 0, 0, 0, 7, 0, 0, 0, 0, 0, 7, 0, 7, 0, 8, 0, 0, 0, 0, 0, 0,
-            0, 0, 0, 0, 0, 8, 0, 8, 0, 0, 0, 8, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0,
-            6, 8
-        ],
-        [
-            8, 7, 7, 7, 7, 0, 7, 0, 0, 0, 0, 0, 7, 0, 7, 0, 8, 0, 8, 0, 0, 0, 0,
-            0, 8, 8, 8, 8, 8, 8, 8, 0, 6, 0, 6, 8, 8, 0, 2, 0, 4, 0, 4, 8, 4, 0,
-            6, 8
-        ],
-        [
-            8, 0, 0, 0, 0, 0, 7, 0, 0, 0, 0, 0, 0, 0, 0, 0, 8, 0, 0, 0, 0, 0, 0,
-            0, 0, 0, 0, 0, 0, 0, 0, 0, 8, 0, 8, 0, 0, 0, 2, 0, 0, 0, 0, 0, 6, 0,
-            6, 8
-        ],
-        [
-            8, 0, 7, 7, 7, 7, 7, 0, 7, 7, 7, 0, 7, 0, 7, 7, 8, 8, 8, 8, 8, 0, 8,
-            0, 8, 8, 8, 8, 8, 0, 8, 8, 8, 4, 2, 0, 4, 2, 2, 4, 2, 0, 4, 0, 2, 0,
-            8, 8
-        ],
-        [
-            8, 0, 7, 0, 0, 0, 7, 0, 0, 0, 0, 0, 0, 0, 7, 0, 0, 0, 0, 0, 0, 0, 8,
-            0, 0, 0, 8, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 8, 0,
-            4, 8
-        ],
-        [
-            8, 0, 7, 0, 7, 0, 7, 0, 7, 7, 7, 7, 7, 7, 7, 0, 8, 0, 8, 0, 8, 8, 8,
-            8, 8, 0, 8, 0, 8, 8, 8, 0, 4, 8, 2, 0, 8, 0, 6, 2, 8, 0, 8, 0, 8, 0,
-            4, 8
-        ],
-        [
-            8, 0, 0, 0, 7, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 8, 0, 0, 0, 8, 0, 0,
-            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 8, 0, 0, 0, 0, 0, 0, 0,
-            2, 8
-        ],
-        [
-            8, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 8, 8, 8, 8, 8, 8, 8,
-            8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 2, 2, 4, 4, 2, 8, 4, 6, 2, 8, 2, 4,
-            8, 8
-        ],
-        [
-            8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8,
-            8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8,
-            8, 8
+            5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5,
+            5, 5, 5, 5, 5, 5, 5, 5, 4
         ]
     ],
-    "spawn": [1.5, 1.5],
+    "spawn": [4.5, 28.5],
     "meta": {
         "sprites": [
             {
                 "kind": "animated",
+                "sprite": "red_light",
+                "goal": false,
+                "trigger_radius": 0.6,
+                "scale": 0.8,
+                "shift": 0.16,
+                "animation_time": 120,
+                "pos": [2.5, 2.5]
+            },
+            {
+                "kind": "static",
+                "sprite": "candlebra.png",
+                "goal": false,
+                "trigger_radius": 0.6,
+                "scale": 0.7,
+                "shift": 0.27,
+                "pos": [2.5, 5.5]
+            },
+            {
+                "kind": "animated",
                 "sprite": "green_light",
-                "pos": [45.5, 41.5],
                 "goal": true,
-                "trigger_radius": 0.8,
-                "scale": 0.9,
+                "trigger_radius": 0.7,
+                "scale": 0.8,
                 "shift": 0.16,
-                "animation_time": 100
+                "animation_time": 120,
+                "pos": [27.5, 3.5]
+            },
+            {
+                "kind": "static",
+                "sprite": "candlebra.png",
+                "goal": false,
+                "trigger_radius": 0.6,
+                "scale": 0.7,
+                "shift": 0.27,
+                "pos": [4.5, 24.5]
+            },
+            {
+                "kind": "static",
+                "sprite": "candlebra.png",
+                "goal": false,
+                "trigger_radius": 0.6,
+                "scale": 0.7,
+                "shift": 0.27,
+                "pos": [4.5, 25.5]
             },
             {
                 "kind": "animated",
                 "sprite": "red_light",
-                "pos": [13.5, 31.5],
                 "goal": false,
                 "trigger_radius": 0.6,
                 "scale": 0.8,
                 "shift": 0.16,
-                "animation_time": 120
+                "animation_time": 120,
+                "pos": [1.5, 30.5]
             },
             {
                 "kind": "animated",
                 "sprite": "red_light",
-                "pos": [31.5, 13.5],
                 "goal": false,
                 "trigger_radius": 0.6,
                 "scale": 0.8,
                 "shift": 0.16,
-                "animation_time": 120
-            },
-            {
-                "kind": "animated",
-                "sprite": "red_light",
-                "pos": [29.5, 24.5],
-                "goal": false,
-                "trigger_radius": 0.6,
-                "scale": 0.8,
-                "shift": 0.16,
-                "animation_time": 120
-            },
-            {
-                "kind": "animated",
-                "sprite": "red_light",
-                "pos": [41.5, 5.5],
-                "goal": false,
-                "trigger_radius": 0.6,
-                "scale": 0.8,
-                "shift": 0.16,
-                "animation_time": 120
-            },
-            {
-                "kind": "animated",
-                "sprite": "red_light",
-                "pos": [9.5, 33.5],
-                "goal": false,
-                "trigger_radius": 0.6,
-                "scale": 0.8,
-                "shift": 0.16,
-                "animation_time": 120
-            },
-            {
-                "kind": "animated",
-                "sprite": "red_light",
-                "pos": [12.5, 6.5],
-                "goal": false,
-                "trigger_radius": 0.6,
-                "scale": 0.8,
-                "shift": 0.16,
-                "animation_time": 120
-            },
-            {
-                "kind": "animated",
-                "sprite": "red_light",
-                "pos": [13.5, 27.5],
-                "goal": false,
-                "trigger_radius": 0.6,
-                "scale": 0.8,
-                "shift": 0.16,
-                "animation_time": 120
-            },
-            {
-                "kind": "animated",
-                "sprite": "red_light",
-                "pos": [5.5, 17.5],
-                "goal": false,
-                "trigger_radius": 0.6,
-                "scale": 0.8,
-                "shift": 0.16,
-                "animation_time": 120
-            },
-            {
-                "kind": "animated",
-                "sprite": "red_light",
-                "pos": [1.5, 19.5],
-                "goal": false,
-                "trigger_radius": 0.6,
-                "scale": 0.8,
-                "shift": 0.16,
-                "animation_time": 120
-            },
-            {
-                "kind": "animated",
-                "sprite": "red_light",
-                "pos": [23.5, 8.5],
-                "goal": false,
-                "trigger_radius": 0.6,
-                "scale": 0.8,
-                "shift": 0.16,
-                "animation_time": 120
-            },
-            {
-                "kind": "animated",
-                "sprite": "red_light",
-                "pos": [29.5, 3.5],
-                "goal": false,
-                "trigger_radius": 0.6,
-                "scale": 0.8,
-                "shift": 0.16,
-                "animation_time": 120
-            },
-            {
-                "kind": "animated",
-                "sprite": "red_light",
-                "pos": [38.5, 17.5],
-                "goal": false,
-                "trigger_radius": 0.6,
-                "scale": 0.8,
-                "shift": 0.16,
-                "animation_time": 120
-            },
-            {
-                "kind": "animated",
-                "sprite": "red_light",
-                "pos": [26.5, 15.5],
-                "goal": false,
-                "trigger_radius": 0.6,
-                "scale": 0.8,
-                "shift": 0.16,
-                "animation_time": 120
-            },
-            {
-                "kind": "animated",
-                "sprite": "red_light",
-                "pos": [3.5, 44.5],
-                "goal": false,
-                "trigger_radius": 0.6,
-                "scale": 0.8,
-                "shift": 0.16,
-                "animation_time": 120
-            },
-            {
-                "kind": "animated",
-                "sprite": "red_light",
-                "pos": [45.5, 12.5],
-                "goal": false,
-                "trigger_radius": 0.6,
-                "scale": 0.8,
-                "shift": 0.16,
-                "animation_time": 120
-            },
-            {
-                "kind": "animated",
-                "sprite": "red_light",
-                "pos": [25.5, 13.5],
-                "goal": false,
-                "trigger_radius": 0.6,
-                "scale": 0.8,
-                "shift": 0.16,
-                "animation_time": 120
-            },
-            {
-                "kind": "animated",
-                "sprite": "red_light",
-                "pos": [7.5, 5.5],
-                "goal": false,
-                "trigger_radius": 0.6,
-                "scale": 0.8,
-                "shift": 0.16,
-                "animation_time": 120
-            },
-            {
-                "kind": "animated",
-                "sprite": "red_light",
-                "pos": [9.5, 8.5],
-                "goal": false,
-                "trigger_radius": 0.6,
-                "scale": 0.8,
-                "shift": 0.16,
-                "animation_time": 120
-            },
-            {
-                "kind": "animated",
-                "sprite": "red_light",
-                "pos": [7.5, 19.5],
-                "goal": false,
-                "trigger_radius": 0.6,
-                "scale": 0.8,
-                "shift": 0.16,
-                "animation_time": 120
-            },
-            {
-                "kind": "animated",
-                "sprite": "red_light",
-                "pos": [17.5, 45.5],
-                "goal": false,
-                "trigger_radius": 0.6,
-                "scale": 0.8,
-                "shift": 0.16,
-                "animation_time": 120
-            },
-            {
-                "kind": "animated",
-                "sprite": "red_light",
-                "pos": [3.5, 16.5],
-                "goal": false,
-                "trigger_radius": 0.6,
-                "scale": 0.8,
-                "shift": 0.16,
-                "animation_time": 120
-            },
-            {
-                "kind": "animated",
-                "sprite": "red_light",
-                "pos": [44.5, 25.5],
-                "goal": false,
-                "trigger_radius": 0.6,
-                "scale": 0.8,
-                "shift": 0.16,
-                "animation_time": 120
-            },
-            {
-                "kind": "animated",
-                "sprite": "red_light",
-                "pos": [39.5, 11.5],
-                "goal": false,
-                "trigger_radius": 0.6,
-                "scale": 0.8,
-                "shift": 0.16,
-                "animation_time": 120
-            },
-            {
-                "kind": "animated",
-                "sprite": "red_light",
-                "pos": [31.5, 1.5],
-                "goal": false,
-                "trigger_radius": 0.6,
-                "scale": 0.8,
-                "shift": 0.16,
-                "animation_time": 120
-            },
-            {
-                "kind": "animated",
-                "sprite": "red_light",
-                "pos": [39.5, 21.5],
-                "goal": false,
-                "trigger_radius": 0.6,
-                "scale": 0.8,
-                "shift": 0.16,
-                "animation_time": 120
-            },
-            {
-                "kind": "animated",
-                "sprite": "red_light",
-                "pos": [31.5, 41.5],
-                "goal": false,
-                "trigger_radius": 0.6,
-                "scale": 0.8,
-                "shift": 0.16,
-                "animation_time": 120
-            },
-            {
-                "kind": "animated",
-                "sprite": "red_light",
-                "pos": [35.5, 9.5],
-                "goal": false,
-                "trigger_radius": 0.6,
-                "scale": 0.8,
-                "shift": 0.16,
-                "animation_time": 120
-            },
-            {
-                "kind": "animated",
-                "sprite": "red_light",
-                "pos": [38.5, 35.5],
-                "goal": false,
-                "trigger_radius": 0.6,
-                "scale": 0.8,
-                "shift": 0.16,
-                "animation_time": 120
-            },
-            {
-                "kind": "animated",
-                "sprite": "red_light",
-                "pos": [44.5, 7.5],
-                "goal": false,
-                "trigger_radius": 0.6,
-                "scale": 0.8,
-                "shift": 0.16,
-                "animation_time": 120
-            },
-            {
-                "kind": "animated",
-                "sprite": "red_light",
-                "pos": [43.5, 45.5],
-                "goal": false,
-                "trigger_radius": 0.6,
-                "scale": 0.8,
-                "shift": 0.16,
-                "animation_time": 120
-            },
-            {
-                "kind": "static",
-                "sprite": "candlebra.png",
-                "pos": [7.5, 17.5],
-                "goal": false,
-                "trigger_radius": 0.6,
-                "scale": 0.7,
-                "shift": 0.27
-            },
-            {
-                "kind": "static",
-                "sprite": "candlebra.png",
-                "pos": [11.5, 33.5],
-                "goal": false,
-                "trigger_radius": 0.6,
-                "scale": 0.7,
-                "shift": 0.27
-            },
-            {
-                "kind": "static",
-                "sprite": "candlebra.png",
-                "pos": [27.5, 13.5],
-                "goal": false,
-                "trigger_radius": 0.6,
-                "scale": 0.7,
-                "shift": 0.27
-            },
-            {
-                "kind": "static",
-                "sprite": "candlebra.png",
-                "pos": [45.5, 20.5],
-                "goal": false,
-                "trigger_radius": 0.6,
-                "scale": 0.7,
-                "shift": 0.27
-            },
-            {
-                "kind": "static",
-                "sprite": "candlebra.png",
-                "pos": [33.5, 17.5],
-                "goal": false,
-                "trigger_radius": 0.6,
-                "scale": 0.7,
-                "shift": 0.27
-            },
-            {
-                "kind": "static",
-                "sprite": "candlebra.png",
-                "pos": [19.5, 3.5],
-                "goal": false,
-                "trigger_radius": 0.6,
-                "scale": 0.7,
-                "shift": 0.27
-            },
-            {
-                "kind": "static",
-                "sprite": "candlebra.png",
-                "pos": [5.5, 5.5],
-                "goal": false,
-                "trigger_radius": 0.6,
-                "scale": 0.7,
-                "shift": 0.27
-            },
-            {
-                "kind": "static",
-                "sprite": "candlebra.png",
-                "pos": [25.5, 10.5],
-                "goal": false,
-                "trigger_radius": 0.6,
-                "scale": 0.7,
-                "shift": 0.27
-            },
-            {
-                "kind": "static",
-                "sprite": "candlebra.png",
-                "pos": [39.5, 9.5],
-                "goal": false,
-                "trigger_radius": 0.6,
-                "scale": 0.7,
-                "shift": 0.27
-            },
-            {
-                "kind": "static",
-                "sprite": "candlebra.png",
-                "pos": [16.5, 17.5],
-                "goal": false,
-                "trigger_radius": 0.6,
-                "scale": 0.7,
-                "shift": 0.27
-            },
-            {
-                "kind": "static",
-                "sprite": "candlebra.png",
-                "pos": [40.5, 31.5],
-                "goal": false,
-                "trigger_radius": 0.6,
-                "scale": 0.7,
-                "shift": 0.27
-            },
-            {
-                "kind": "static",
-                "sprite": "candlebra.png",
-                "pos": [30.5, 5.5],
-                "goal": false,
-                "trigger_radius": 0.6,
-                "scale": 0.7,
-                "shift": 0.27
-            },
-            {
-                "kind": "static",
-                "sprite": "candlebra.png",
-                "pos": [41.5, 27.5],
-                "goal": false,
-                "trigger_radius": 0.6,
-                "scale": 0.7,
-                "shift": 0.27
-            },
-            {
-                "kind": "static",
-                "sprite": "candlebra.png",
-                "pos": [20.5, 7.5],
-                "goal": false,
-                "trigger_radius": 0.6,
-                "scale": 0.7,
-                "shift": 0.27
-            },
-            {
-                "kind": "static",
-                "sprite": "candlebra.png",
-                "pos": [19.5, 35.5],
-                "goal": false,
-                "trigger_radius": 0.6,
-                "scale": 0.7,
-                "shift": 0.27
-            },
-            {
-                "kind": "static",
-                "sprite": "candlebra.png",
-                "pos": [9.5, 5.5],
-                "goal": false,
-                "trigger_radius": 0.6,
-                "scale": 0.7,
-                "shift": 0.27
-            },
-            {
-                "kind": "static",
-                "sprite": "candlebra.png",
-                "pos": [23.5, 45.5],
-                "goal": false,
-                "trigger_radius": 0.6,
-                "scale": 0.7,
-                "shift": 0.27
-            },
-            {
-                "kind": "static",
-                "sprite": "candlebra.png",
-                "pos": [32.5, 45.5],
-                "goal": false,
-                "trigger_radius": 0.6,
-                "scale": 0.7,
-                "shift": 0.27
-            },
-            {
-                "kind": "static",
-                "sprite": "candlebra.png",
-                "pos": [31.5, 27.5],
-                "goal": false,
-                "trigger_radius": 0.6,
-                "scale": 0.7,
-                "shift": 0.27
-            },
-            {
-                "kind": "static",
-                "sprite": "candlebra.png",
-                "pos": [35.5, 21.5],
-                "goal": false,
-                "trigger_radius": 0.6,
-                "scale": 0.7,
-                "shift": 0.27
-            },
-            {
-                "kind": "static",
-                "sprite": "candlebra.png",
-                "pos": [5.5, 12.5],
-                "goal": false,
-                "trigger_radius": 0.6,
-                "scale": 0.7,
-                "shift": 0.27
-            },
-            {
-                "kind": "static",
-                "sprite": "candlebra.png",
-                "pos": [22.5, 29.5],
-                "goal": false,
-                "trigger_radius": 0.6,
-                "scale": 0.7,
-                "shift": 0.27
-            },
-            {
-                "kind": "static",
-                "sprite": "candlebra.png",
-                "pos": [25.5, 41.5],
-                "goal": false,
-                "trigger_radius": 0.6,
-                "scale": 0.7,
-                "shift": 0.27
-            },
-            {
-                "kind": "static",
-                "sprite": "candlebra.png",
-                "pos": [17.5, 31.5],
-                "goal": false,
-                "trigger_radius": 0.6,
-                "scale": 0.7,
-                "shift": 0.27
-            },
-            {
-                "kind": "static",
-                "sprite": "candlebra.png",
-                "pos": [1.5, 29.5],
-                "goal": false,
-                "trigger_radius": 0.6,
-                "scale": 0.7,
-                "shift": 0.27
-            },
-            {
-                "kind": "static",
-                "sprite": "candlebra.png",
-                "pos": [29.5, 36.5],
-                "goal": false,
-                "trigger_radius": 0.6,
-                "scale": 0.7,
-                "shift": 0.27
-            },
-            {
-                "kind": "static",
-                "sprite": "candlebra.png",
-                "pos": [41.5, 24.5],
-                "goal": false,
-                "trigger_radius": 0.6,
-                "scale": 0.7,
-                "shift": 0.27
-            },
-            {
-                "kind": "static",
-                "sprite": "candlebra.png",
-                "pos": [45.5, 23.5],
-                "goal": false,
-                "trigger_radius": 0.6,
-                "scale": 0.7,
-                "shift": 0.27
-            },
-            {
-                "kind": "static",
-                "sprite": "candlebra.png",
-                "pos": [39.5, 33.5],
-                "goal": false,
-                "trigger_radius": 0.6,
-                "scale": 0.7,
-                "shift": 0.27
-            },
-            {
-                "kind": "static",
-                "sprite": "candlebra.png",
-                "pos": [35.5, 18.5],
-                "goal": false,
-                "trigger_radius": 0.6,
-                "scale": 0.7,
-                "shift": 0.27
-            },
-            {
-                "kind": "static",
-                "sprite": "candlebra.png",
-                "pos": [42.5, 21.5],
-                "goal": false,
-                "trigger_radius": 0.6,
-                "scale": 0.7,
-                "shift": 0.27
-            },
-            {
-                "kind": "static",
-                "sprite": "candlebra.png",
-                "pos": [35.5, 14.5],
-                "goal": false,
-                "trigger_radius": 0.6,
-                "scale": 0.7,
-                "shift": 0.27
-            },
-            {
-                "kind": "static",
-                "sprite": "candlebra.png",
-                "pos": [19.5, 9.5],
-                "goal": false,
-                "trigger_radius": 0.6,
-                "scale": 0.7,
-                "shift": 0.27
-            },
-            {
-                "kind": "static",
-                "sprite": "candlebra.png",
-                "pos": [31.5, 15.5],
-                "goal": false,
-                "trigger_radius": 0.6,
-                "scale": 0.7,
-                "shift": 0.27
-            },
-            {
-                "kind": "static",
-                "sprite": "candlebra.png",
-                "pos": [21.5, 24.5],
-                "goal": false,
-                "trigger_radius": 0.6,
-                "scale": 0.7,
-                "shift": 0.27
-            },
-            {
-                "kind": "static",
-                "sprite": "candlebra.png",
-                "pos": [33.5, 5.5],
-                "goal": false,
-                "trigger_radius": 0.6,
-                "scale": 0.7,
-                "shift": 0.27
-            },
-            {
-                "kind": "static",
-                "sprite": "candlebra.png",
-                "pos": [27.5, 17.5],
-                "goal": false,
-                "trigger_radius": 0.6,
-                "scale": 0.7,
-                "shift": 0.27
-            },
-            {
-                "kind": "static",
-                "sprite": "candlebra.png",
-                "pos": [43.5, 10.5],
-                "goal": false,
-                "trigger_radius": 0.6,
-                "scale": 0.7,
-                "shift": 0.27
-            },
-            {
-                "kind": "static",
-                "sprite": "candlebra.png",
-                "pos": [10.5, 43.5],
-                "goal": false,
-                "trigger_radius": 0.6,
-                "scale": 0.7,
-                "shift": 0.27
-            },
-            {
-                "kind": "static",
-                "sprite": "candlebra.png",
-                "pos": [29.5, 45.5],
-                "goal": false,
-                "trigger_radius": 0.6,
-                "scale": 0.7,
-                "shift": 0.27
-            },
-            {
-                "kind": "static",
-                "sprite": "candlebra.png",
-                "pos": [41.5, 40.5],
-                "goal": false,
-                "trigger_radius": 0.6,
-                "scale": 0.7,
-                "shift": 0.27
-            },
-            {
-                "kind": "static",
-                "sprite": "candlebra.png",
-                "pos": [5.5, 39.5],
-                "goal": false,
-                "trigger_radius": 0.6,
-                "scale": 0.7,
-                "shift": 0.27
-            },
-            {
-                "kind": "animated",
-                "sprite": "green_light",
-                "pos": [9.5, 29.5],
-                "goal": false,
-                "trigger_radius": 0.6,
-                "scale": 0.75,
-                "shift": 0.16,
-                "animation_time": 140
-            },
-            {
-                "kind": "animated",
-                "sprite": "green_light",
-                "pos": [13.5, 40.5],
-                "goal": false,
-                "trigger_radius": 0.6,
-                "scale": 0.75,
-                "shift": 0.16,
-                "animation_time": 140
-            },
-            {
-                "kind": "animated",
-                "sprite": "green_light",
-                "pos": [19.5, 12.5],
-                "goal": false,
-                "trigger_radius": 0.6,
-                "scale": 0.75,
-                "shift": 0.16,
-                "animation_time": 140
-            },
-            {
-                "kind": "animated",
-                "sprite": "green_light",
-                "pos": [8.5, 41.5],
-                "goal": false,
-                "trigger_radius": 0.6,
-                "scale": 0.75,
-                "shift": 0.16,
-                "animation_time": 140
-            },
-            {
-                "kind": "animated",
-                "sprite": "green_light",
-                "pos": [9.5, 2.5],
-                "goal": false,
-                "trigger_radius": 0.6,
-                "scale": 0.75,
-                "shift": 0.16,
-                "animation_time": 140
-            },
-            {
-                "kind": "animated",
-                "sprite": "green_light",
-                "pos": [31.5, 8.5],
-                "goal": false,
-                "trigger_radius": 0.6,
-                "scale": 0.75,
-                "shift": 0.16,
-                "animation_time": 140
-            },
-            {
-                "kind": "animated",
-                "sprite": "green_light",
-                "pos": [18.5, 27.5],
-                "goal": false,
-                "trigger_radius": 0.6,
-                "scale": 0.75,
-                "shift": 0.16,
-                "animation_time": 140
-            },
-            {
-                "kind": "animated",
-                "sprite": "green_light",
-                "pos": [29.5, 29.5],
-                "goal": false,
-                "trigger_radius": 0.6,
-                "scale": 0.75,
-                "shift": 0.16,
-                "animation_time": 140
-            },
-            {
-                "kind": "animated",
-                "sprite": "green_light",
-                "pos": [30.5, 31.5],
-                "goal": false,
-                "trigger_radius": 0.6,
-                "scale": 0.75,
-                "shift": 0.16,
-                "animation_time": 140
-            },
-            {
-                "kind": "animated",
-                "sprite": "green_light",
-                "pos": [27.5, 38.5],
-                "goal": false,
-                "trigger_radius": 0.6,
-                "scale": 0.75,
-                "shift": 0.16,
-                "animation_time": 140
-            },
-            {
-                "kind": "animated",
-                "sprite": "green_light",
-                "pos": [15.5, 28.5],
-                "goal": false,
-                "trigger_radius": 0.6,
-                "scale": 0.75,
-                "shift": 0.16,
-                "animation_time": 140
-            },
-            {
-                "kind": "animated",
-                "sprite": "green_light",
-                "pos": [12.5, 1.5],
-                "goal": false,
-                "trigger_radius": 0.6,
-                "scale": 0.75,
-                "shift": 0.16,
-                "animation_time": 140
+                "animation_time": 120,
+                "pos": [3.5, 30.5]
             }
         ]
     }

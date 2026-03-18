@@ -49,7 +49,7 @@ FLOOR_COLOR: str = "#B7753D"
 # Raycasting
 # ---------------------------------------------------------------------------
 
-FOV: float = math.pi / 3
+FOV: float = math.pi / 2.5
 HALF_FOV: float = FOV / 2
 
 NUM_RAYS: int = WIDTH // 2
