@@ -10,7 +10,6 @@ from object_renderer import ObjectRenderer
 from player import Player
 from raycasting import RayCasting
 from settings import FPS, RES
-from sound import Sound
 
 
 class Game:
@@ -49,9 +48,7 @@ class Game:
         self.object_renderer = ObjectRenderer(self)
         self.raycasting = RayCasting(self)
         self.object_handler = ObjectHandler(self)
-        self.sound = Sound(self)
 
-        pg.mixer.music.play(-1)
 
     def start_level_complete(self) -> None:
         """Start the victory transition."""
