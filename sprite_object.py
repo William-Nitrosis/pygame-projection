@@ -1,10 +1,9 @@
 from __future__ import annotations
 
-from typing import TYPE_CHECKING, Deque, Tuple
-
 import math
 import os
 from collections import deque
+from typing import TYPE_CHECKING
 
 import pygame as pg
 
@@ -21,7 +20,7 @@ class SpriteObject:
         self,
         game: Game,
         path: str = "resources/sprites/static_sprites/candlebra.png",
-        pos: Tuple[float, float] = (10.5, 3.5),
+        pos: tuple[float, float] = (10.5, 3.5),
         scale: float = 0.7,
         shift: float = 0.27,
         is_goal: bool = False,
@@ -104,7 +103,7 @@ class AnimatedSprite(SpriteObject):
         self,
         game: Game,
         path: str = "resources/sprites/animated_sprites/green_light/0.png",
-        pos: Tuple[float, float] = (11.5, 3.5),
+        pos: tuple[float, float] = (11.5, 3.5),
         scale: float = 0.8,
         shift: float = 0.16,
         animation_time: int = 120,
@@ -123,7 +122,7 @@ class AnimatedSprite(SpriteObject):
 
         self.animation_time = int(animation_time)
         self.path = path.rsplit("/", 1)[0]
-        self.images: Deque[pg.Surface] = self.get_images(self.path)
+        self.images: deque[pg.Surface] = self.get_images(self.path)
 
         self.animation_time_prev = pg.time.get_ticks()
         self.animation_trigger = False
@@ -133,7 +132,7 @@ class AnimatedSprite(SpriteObject):
         self.check_animation_time()
         self.animate(self.images)
 
-    def animate(self, images: Deque[pg.Surface]) -> None:
+    def animate(self, images: deque[pg.Surface]) -> None:
         if self.animation_trigger and images:
             images.rotate(-1)
             self.image = images[0]
@@ -145,8 +144,8 @@ class AnimatedSprite(SpriteObject):
             self.animation_time_prev = time_now
             self.animation_trigger = True
 
-    def get_images(self, path: str) -> Deque[pg.Surface]:
-        images: Deque[pg.Surface] = deque()
+    def get_images(self, path: str) -> deque[pg.Surface]:
+        images: deque[pg.Surface] = deque()
         for file_name in sorted(os.listdir(path)):
             full = os.path.join(path, file_name)
             if os.path.isfile(full):

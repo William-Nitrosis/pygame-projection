@@ -1,12 +1,12 @@
 from __future__ import annotations
 
 from pathlib import Path
-from typing import TYPE_CHECKING, Any, Dict, Tuple
+from typing import TYPE_CHECKING, Any
 
 import pygame as pg
 
+from map_editor import MAX_TILE, value_to_color
 from map_io import load_map_json
-from map_editor import value_to_color, MAX_TILE
 from settings import WIDTH
 
 if TYPE_CHECKING:
@@ -24,7 +24,7 @@ class Map:
         self.level_path = Path(level_path)
 
         self.mini_map: list[list[int]] = []
-        self.world_map: Dict[Tuple[int, int], int] = {}
+        self.world_map: dict[tuple[int, int], int] = {}
 
         self.spawn: tuple[float, float] | None = None
         self.meta: dict[str, Any] = {}
@@ -42,8 +42,8 @@ class Map:
                 self.spawn = data.spawn
                 self.meta = data.meta or {}
                 return
-        except Exception:
-            pass
+        except Exception as e:
+            print(f"Error: {e}")
 
         self.mini_map = []
         self.spawn = None

@@ -1,7 +1,7 @@
 from __future__ import annotations
 
 import math
-from typing import TYPE_CHECKING, Dict
+from typing import TYPE_CHECKING
 
 import pygame as pg
 
@@ -69,7 +69,7 @@ class ObjectRenderer:
         texture = pg.image.load(path).convert_alpha()
         return pg.transform.scale(texture, res)
 
-    def load_wall_textures(self) -> Dict[int, pg.Surface]:
+    def load_wall_textures(self) -> dict[int, pg.Surface]:
         return {
             1: self.get_texture("resources/textures/1.png"),
             2: self.get_texture("resources/textures/2.png"),

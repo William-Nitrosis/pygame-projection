@@ -11,12 +11,12 @@ The map editor (map_editor.py) also uses this module.
 
 from __future__ import annotations
 
+from collections.abc import Sequence
 from dataclasses import dataclass
 from pathlib import Path
-from typing import Any, List, Optional, Sequence
+from typing import Any
 
-
-Grid = List[List[int]]
+Grid = list[list[int]]
 
 
 @dataclass(frozen=True)
@@ -24,18 +24,18 @@ class MapData:
     """Map payload stored on disk."""
 
     grid: Grid
-    spawn: Optional[tuple[float, float]] = None
-    meta: Optional[dict[str, Any]] = None
+    spawn: tuple[float, float] | None = None
+    meta: dict[str, Any] | None = None
 
 
 def normalize_grid(grid: Sequence[Sequence[int]]) -> Grid:
     """Return a defensive copy of `grid` with all values coerced to ints >= 0."""
     out: Grid = []
     for row in grid:
-        out_row: List[int] = []
+        out_row: list[int] = []
         for v in row:
             iv = int(v)
-            out_row.append(iv if iv >= 0 else 0)
+            out_row.append(max(iv, 0))
         out.append(out_row)
     return out
 

@@ -1,20 +1,19 @@
 from __future__ import annotations
 
 import sys
+
 import pygame as pg
 
-from settings import FPS, RES
 from map import Map
+from object_handler import ObjectHandler
+from object_renderer import ObjectRenderer
 from player import Player
 from raycasting import RayCasting
-from object_renderer import ObjectRenderer
-from object_handler import ObjectHandler
+from settings import FPS, RES
 from sound import Sound
 
 
 class Game:
-    """Top-level game object that wires together all subsystems."""
-
     def __init__(self) -> None:
         pg.init()
         pg.mouse.set_visible(False)

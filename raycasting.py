@@ -1,8 +1,8 @@
 from __future__ import annotations
 
-from typing import TYPE_CHECKING, List, Tuple
-
 import math
+from typing import TYPE_CHECKING
+
 import pygame as pg
 
 from settings import (
@@ -30,8 +30,8 @@ class RayCasting:
 
     def __init__(self, game: Game) -> None:
         self.game = game
-        self.ray_casting_result: List[Tuple[float, int, int, float, bool]] = []
-        self.objects_to_render: List[Tuple[float, pg.Surface, Tuple[int, int]]] = []
+        self.ray_casting_result: list[tuple[float, int, int, float, bool]] = []
+        self.objects_to_render: list[tuple[float, pg.Surface, tuple[int, int]]] = []
         self.textures = self.game.object_renderer.wall_textures
 
     def get_objects_to_render(self) -> None:
@@ -93,9 +93,7 @@ class RayCasting:
             if abs(cos_a) < EPS:
                 cos_a = EPS if cos_a >= 0 else -EPS
 
-            # -----------------------------------------------------------------
             # horizontals
-            # -----------------------------------------------------------------
             y_hor, dy = (y_map + 1, 1) if sin_a > 0 else (y_map - 1e-6, -1)
 
             depth_hor = (y_hor - oy) / sin_a
@@ -113,9 +111,7 @@ class RayCasting:
                 y_hor += dy
                 depth_hor += delta_depth
 
-            # -----------------------------------------------------------------
             # verticals
-            # -----------------------------------------------------------------
             x_vert, dx = (x_map + 1, 1) if cos_a > 0 else (x_map - 1e-6, -1)
 
             depth_vert = (x_vert - ox) / cos_a

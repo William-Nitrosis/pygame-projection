@@ -1,7 +1,6 @@
 from __future__ import annotations
 
 import math
-from typing import Tuple
 
 # ---------------------------------------------------------------------------
 # Window / timing
@@ -20,7 +19,7 @@ FPS: int = 0
 # Player
 # ---------------------------------------------------------------------------
 
-PLAYER_POS: Tuple[float, float] = (1.5, 5.0)  # map-space coordinates
+PLAYER_POS: tuple[float, float] = (1.5, 5.0)  # map-space coordinates
 PLAYER_ANGLE: float = 0.0
 
 # IMPORTANT: This project treats delta_time as milliseconds.
@@ -49,7 +48,7 @@ FLOOR_COLOR: str = "#B7753D"
 # Raycasting
 # ---------------------------------------------------------------------------
 
-FOV: float = math.pi / 2.5
+FOV: float = math.pi / 2.1
 HALF_FOV: float = FOV / 2
 
 NUM_RAYS: int = WIDTH // 2

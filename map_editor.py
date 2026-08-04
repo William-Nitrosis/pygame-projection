@@ -34,7 +34,7 @@ import colorsys
 from copy import deepcopy
 from dataclasses import dataclass
 from pathlib import Path
-from typing import Any, Optional
+from typing import Any
 
 import pygame as pg
 
@@ -48,7 +48,7 @@ class EditorState:
     selected: int = 1
     show_grid: bool = True
     dragging: bool = False
-    drag_start: Optional[tuple[int, int]] = None
+    drag_start: tuple[int, int] | None = None
     mode_index: int = 0
     selected_object_index: int = 0
 
@@ -137,7 +137,7 @@ def find_object_at_tile(
     sprites: list[dict[str, Any]],
     tile_x: int,
     tile_y: int,
-) -> Optional[int]:
+) -> int | None:
     for index, sprite in enumerate(sprites):
         pos = sprite.get("pos")
         if not isinstance(pos, (list, tuple)) or len(pos) != 2:
@@ -147,7 +147,7 @@ def find_object_at_tile(
     return None
 
 
-def ensure_meta(meta: Optional[dict[str, Any]]) -> dict[str, Any]:
+def ensure_meta(meta: dict[str, Any] | None) -> dict[str, Any]:
     if isinstance(meta, dict):
         out = deepcopy(meta)
     else:
@@ -161,9 +161,9 @@ def ensure_meta(meta: Optional[dict[str, Any]]) -> dict[str, Any]:
 
 def main() -> None:
     parser = argparse.ArgumentParser()
-    parser.add_argument("--path", default="resources/maps/level4.json")
-    parser.add_argument("--cols", type=int, default=32)
-    parser.add_argument("--rows", type=int, default=32)
+    parser.add_argument("--path", default="resources/maps/level2.json")
+    parser.add_argument("--cols", type=int, default=16)
+    parser.add_argument("--rows", type=int, default=16)
     parser.add_argument("--cell", type=int, default=24)
     args = parser.parse_args()
 
@@ -224,7 +224,7 @@ def main() -> None:
             screen = pg.display.set_mode((cols * cell, rows * cell + ui_h))
             pg.display.set_caption(f"PyGame Map Editor - loaded {map_path}")
 
-    def tile_at_mouse() -> Optional[tuple[int, int]]:
+    def tile_at_mouse() -> tuple[int, int] | None:
         mx, my = pg.mouse.get_pos()
         if my >= rows * cell:
             return None
@@ -341,18 +341,17 @@ def main() -> None:
                         if spawn is not None and pos_to_tile(spawn) == (tx, ty):
                             spawn = None
 
-            if event.type == pg.MOUSEBUTTONUP:
-                if (
-                    event.button == 1
-                    and current_mode() == "WALL"
-                    and state.dragging
-                    and state.drag_start is not None
-                ):
-                    tile = tile_at_mouse()
-                    if tile is not None:
-                        paint_rect(state.drag_start, tile, state.selected)
-                    state.dragging = False
-                    state.drag_start = None
+            if event.type == pg.MOUSEBUTTONUP and (
+                event.button == 1
+                and current_mode() == "WALL"
+                and state.dragging
+                and state.drag_start is not None
+            ):
+                tile = tile_at_mouse()
+                if tile is not None:
+                    paint_rect(state.drag_start, tile, state.selected)
+                state.dragging = False
+                state.drag_start = None
 
         tile = tile_at_mouse()
         buttons = pg.mouse.get_pressed(3)
